@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto+Condensed" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <title>Playground</title>
+</head>
+<body>
+  <main class="main">
+    <div class="container">
+      <h1>checkBracketsSyntax</h1>
+      <hr>
+      <a href="https://github.com/tutu-ru/frontend-javascript-test">tutu-ru</a>
+      
+      <p>Реализовать функцию checkSyntax(string), проверяющую на синтаксическую верность последовательность скобок. Задача не сводится к простой проверке сбалансированности скобок. Нужно еще учитывать их последовательность (вложенность).</p>
+
+      <p>Обратите внимание на производительность вашего решения.</p>
+      <p>Решение должно быть компактным.</p>
+      <p>Решение должно быть простым, умещаться в 1м файле и содержать 20-30 строк кода или меньше.</p>
+      <p>Идеальное время решения на задачу не более 30 минут (задачу можно решить и за 10 минут).</p>
+
+      <p>Покажите решение, если нужно проверять следующий набор скобок: <,[,{,(</p>
+
+      <p>Изменится ли ваше решение, если нужно проверять только такой набор скобок: <,[,{</p>
+
+      <p>В случае ошибки возвращаем 1.</p>
+      <p>В остальных случаех возвращаем 0. </p>
+      <p>Тесты для 1го набора:</p>
+
+      <code>
+        checkSyntax("---(++++)----") == 0
+        checkSyntax("") -> 0
+        checkSyntax("before ( middle []) after ") == 0
+        checkSyntax(") (") == 1
+        checkSyntax("} {") == 1
+        checkSyntax("<(   >)") == 1
+        checkSyntax("(  [  <>  ()  ]  <>  )") == 0
+        checkSyntax("   (      [)") == 1
+        // и так далее...
+      </code>
+    </div>
+  </main>
+
+  <script type="text/javascript">
+    function checkSyntax(string) {
+      var array = string.match(/[(><{})]/gi);
+      var charCodes = {};
+
+      array.forEach( (bracket, i) => { 
+        if ( charCodes[bracket.charCodeAt(0)] >= 0 ) {
+          charCodes[bracket.charCodeAt(0)] += 1;
+        } else {
+          charCodes[bracket.charCodeAt(0)] = 1;
+        }
+      });
+
+      for(key in charCodes) {
+        console.log(charCodes[key], charCodes[+key + 1])
+        if (charCodes[key] == charCodes[+key + 1]) {
+          console.log('good')
+        }
+      }
+    }
+  checkSyntax("( ()  )")
+  </script>
+</body>
+</html>

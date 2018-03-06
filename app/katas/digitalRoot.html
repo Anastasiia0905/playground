@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto+Condensed" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <title>Playground</title>
+</head>
+<body>
+  <main class="main">
+    <div class="container">
+      <h1>Sum of Digits / Digital Root</h1>
+      <hr>
+      <a href="https://www.codewars.com/kata/sum-of-digits-slash-digital-root/train/javascript">Code Wars  <b>[6]</b></a>
+      
+      <p>In this kata, you must create a digital root function.</p>
+      <p>A digital root is the recursive sum of all the digits in a number. Given n, take the sum of the digits of n. If that value has two digits, continue reducing in this way until a single-digit number is produced. This is only applicable to the natural numbers.</p>
+      <p>Here's how it works (Ruby example given):</p>
+        
+        <pre>
+          <code>digitalRoot(16)</code>
+          <code>=> 1 + 6</code>
+          <code>=> 7</code>
+          
+          <code>digitalRoot(942)</code>
+          <code>=> 9 + 4 + 2</code>
+          <code>=> 15 ...</code>
+          <code>=> 1 + 5</code>
+          <code>=> 6</code>
+          
+          <code>digitalRoot(132189)</code>
+          <code>=> 1 + 3 + 2 + 1 + 8 + 9</code>
+          <code>=> 24 ...</code>
+          <code>=> 2 + 4</code>
+          <code>=> 6</code>
+          
+          <code>digitalRoot(493193)</code>
+          <code>=> 4 + 9 + 3 + 1 + 9 + 3</code>
+          <code>=> 29 ...</code>
+          <code>=> 2 + 9</code>
+          <code>=> 11 ...</code>
+          <code>=> 1 + 1</code>
+          <code>=> 2</code>
+        </pre>
+    </div>
+  </main>
+
+  <script type="text/javascript">
+    let sum;
+
+    function digitalRoot(n) {
+      let arrayOfNumbers = n.toString().split('');
+      sum = 0;
+      
+      arrayOfNumbers.forEach( num => { sum += parseInt(num) });
+      if (sum.toString().length > 1) { digitalRoot(sum) }
+      else { console.log(sum) };
+    }
+
+    // Clever 1
+    function digital_root(n) {
+      console.log((n - 1) % 9 + 1)
+    }
+
+    // Clever 2
+    function digital_root(n) {
+      if (n < 10) return n;
+      
+      return digital_root(
+        n.toString().split('').reduce(function(acc, d) { return acc + +d; }, 0));
+    }
+
+    digitalRoot(493193);
+    digital_root(493193);
+  </script>
+</body>
+</html>

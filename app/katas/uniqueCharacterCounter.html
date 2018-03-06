@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto+Condensed" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <title>Playground</title>
+</head>
+<body>
+  <main class="main">
+    <div class="container">
+      <h1>uniqueCharacterCounter</h1>
+      <hr>
+      <p>Create function <code>uniqueCharacterCounter(string)</code> which counts unique letters</p>
+      <p><code>uniqueCharacterCounter('abcabca')</code> should return  <code>{a: 3, b: 2, c: 2}</code></p>
+    </div>
+  </main>
+
+  <script type="text/javascript">
+    // the solution
+    function uniqueCharacterCounter(string) {
+      var string = string.split('');
+        var uniqueLetters = {};
+
+        string.forEach( (letter) => {
+
+            if (uniqueLetters[letter] >= 0) {
+                uniqueLetters[letter] += 1;
+            } else {
+                uniqueLetters[letter] = 1;
+            }
+        })
+
+      return uniqueLetters;
+    }
+  </script>
+</body>
+</html>
