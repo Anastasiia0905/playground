@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>sumOfSquare</title>
+</head>
+<body>
+    <p>Find the difference between the sum of the squares of the first 
+        n natural numbers (1 <= n <= 100) and the square of their sum.</p>
+</body>
+    <script>
+    function differenceOfSquares(n){
+	//create array and add all number from 1 to n
+  let arr = [];
+  for (let i = 1; i <= n; i++){
+  	arr.push(i);
+  }
+  
+  //part 1, square of the sum
+  let sum = arr.reduce(function(cur, sum){
+  	return cur + sum;
+  });
+  let sumPow = Math.pow(sum, 2);
+  
+  //part2, sum of the square
+  let sum2 = arr.map(function(item){
+  	return item*item;
+  }).reduce(function(cur, sum){return cur+sum});
+  
+  return sumPow - sum2;
+}
+    </script>
+</html>
