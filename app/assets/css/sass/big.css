@@ -1,0 +1,94 @@
+@font-face {
+  font-family: 'WorkSans-Regular';
+  src: url("../../BIG/fonts/WorkSans-Regular.ttf"); }
+
+body {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "WorkSans-Regular";
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #828282;
+  background: #fff; }
+
+/*-----------------Hero-------------*/
+.hero {
+  background: wheat;
+  height: 800px; }
+
+.nav-menu {
+  -webkit-transition: left 0.5s ease;
+  transition: left 0.5s ease;
+  background: #28dde0;
+  color: white;
+  cursor: pointer;
+  font-size: 2rem;
+  height: 100vh;
+  padding: 6rem 2rem 2rem 2rem;
+  left: -24rem;
+  width: 20rem;
+  position: fixed;
+  z-index: 1; }
+
+.nav-menu.expanted {
+  left: 0; }
+
+.nav-menu ul {
+  position: absolute;
+  list-style: none;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  padding: 0;
+  margin: 0; }
+
+.nav-toggle {
+  cursor: pointer;
+  height: 2rem;
+  width: 3.6rem;
+  position: fixed;
+  left: 2rem;
+  z-index: 2; }
+
+.nav-toggle:hover {
+  opacity: 0.8; }
+
+.nav-toggle .nav-toggle-bar, .nav-toggle .nav-toggle-bar::before,
+.nav-toggle .nav-toggle-bar::after {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  background: white;
+  content: '';
+  height: 0.4rem;
+  width: 100%;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease; }
+
+.nav-toggle .nav-toggle-bar {
+  margin-top: 0; }
+
+.nav-toggle .nav-toggle-bar::before {
+  margin-top: -0.8rem; }
+
+.nav-toggle .nav-toggle-bar::after {
+  margin-top: 0.8rem; }
+
+.nav-toggle.expanted .nav-toggle-bar {
+  background: transparent; }
+
+.nav-toggle.expanted .nav-toggle-bar::before,
+.nav-toggle.expanted .nav-toggle-bar::after {
+  background: white;
+  margin-top: 0; }
+
+.nav-toggle.expanted .nav-toggle-bar::after {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg); }
+
+.nav-toggle.expanted .nav-toggle-bar::before {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg); }

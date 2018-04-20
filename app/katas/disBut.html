@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>disappearButton</title>
+</head>
+<body>
+    
+        <div>
+                <input id ="input" type="text">
+                </div>
+                <div id="buttonGroup">
+                
+                </div>
+                <div id="output">
+                
+                </div>
+    <script>
+    let input = document.getElementById('input');//объявляем инпут
+    let buttonGroup = document.querySelector('#buttonGroup');//объявляем группу кнопок
+    let inputValue;// переменная, в которой будет храниться вводимые данные
+     //создаем действие, при котором при вводе символа в инпут появлееться батон 
+    
+     input.oninput = function(){
+	    let button = document.createElement('button');//создаем кнопку
+      buttonGroup.appendChild(button);//добавляем в группу кнопок
+
+      inputValue = this.value;//записываем то что вводим 
+	    button.innerHTML = inputValue.charAt(inputValue.length-1);//надпись в кнопке
+      
+	  //проверяем длину 
+      if(event.target.value.length < 5){
+  	  document.getElementById('output').innerHTML = "Text is to short"
+        } else {
+  	      document.getElementById('output').innerHTML = "Text is good"
+        }
+      };
+
+    buttonGroup.addEventListener('click', function(e){
+      let target = e.target;
+      let numBut;
+      for(let i in buttonGroup.children){
+        if(buttonGroup.children[i] == target){
+          numBut = i;
+        }
+      }
+      
+      buttonGroup.removeChild(target);
+      
+    })
+    </script>
+</body>
+</html>

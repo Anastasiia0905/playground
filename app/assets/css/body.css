@@ -1,0 +1,145 @@
+body {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	overflow: hidden;
+	font-size: 100%;
+	font-family: 'Titillium Web', sans-serif;
+}
+
+/*обращайся только по class*/
+form {
+	max-width: 600px;
+	margin: 20px auto;
+	box-shadow:0 4px 10px 4px rgba(19,35,47,0.3);
+	color: #fff;
+}
+
+/*не используй id, вместо class*/
+#mainForm {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: center;
+	width: 100%;
+	padding: 20px 0;
+	background-color: rgba(19,35,47, .9);	
+}
+
+.headline {
+	font-size: 200%;
+	text-align: center;
+	width: 100%;
+}
+
+#buttons,
+#SingForm,
+#LogForm {
+	display: flex;
+	flex-direction: row;
+	margin: 20px;
+	flex-wrap: wrap;
+}
+
+#LastName,
+#FirstName {
+	padding: 5px;
+	max-width: 40%;
+	margin-bottom: 15px;
+	
+}
+
+#EmailAdress,
+#EmailAdress2,
+#Password,
+#Password2 {
+	width: 100%;
+	padding: 5px;
+	margin-bottom: 15px;
+}
+#Submit,
+#Submit2 {
+	margin-top: 10px;
+	width: 100%;
+	font-size: 2em;
+	text-transform: uppercase;
+	background-color: #1ab188;
+	color: #fff;
+	border: none;
+}
+
+#Submit:hover,
+#Submit2:hover {
+	background-color: #11916f;
+}
+
+#buttons {
+	justify-content: center;
+}
+
+#SingForm {
+	justify-content: space-between;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+	border: 1px solid #ddd;
+	background-color: rgba(19, 35, 47, 0);
+	font-size: 1em;
+	color: #ddd;
+}
+
+input:focus {
+	border: 1px solid #11916f;
+	outline: none;
+}
+
+.tab {
+	border: none;
+	padding: 1em;
+	padding: 1em 1em;
+	flex: 1 1 0;
+	outline: none;
+}
+
+.active.tab{
+	background-color: #1ab188;
+	color: #fff;
+}
+
+.tab {
+	background-color: #a0b3b0;
+	color: #ddd;
+	font-size: 1.2em;
+}
+
+.tab:hover {
+	background-color: #11916f;
+	color: #fff;
+}
+#anchor {
+	margin-left: auto;
+	text-decoration: none;
+}
+#anchor:visited {
+	color: #11916f;
+}
+@media screen and (min-width: 480px){
+	#emailForm {
+		margin: 20px auto;
+		width: 70%;
+	}
+	#buttons {
+		margin: 20px 20px;
+	}
+}
+@media screen and(min-widht: 1024px){
+	#emailForm {
+		width: 45%;
+		
+	}
+	#buttons {
+		margin: 20px 40px;
+	}
+}

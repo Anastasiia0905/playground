@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DeathStar</title>
+</head>
+<body>
+    <script>
+    function deathStar(week){
+  var material = {
+  	iron: 0,
+    steel: 0,
+    chrome: 0
+  }
+  var need = {
+  	one: 100,
+   	two: 75,
+    three: 50
+  }
+  var a, b, c;
+  var stop = week[week.length-1];
+ for(var i = 0; i < stop; i++){
+ 	material.iron += week[i][0];
+  material.steel += week[i][1];
+  material.chrome +=week[i][2];
+ }
+ if(material.iron > need.one){
+ 	a =  0
+ } else {
+ 	a =  need.one - material.iron;
+ }
+ if(material.steel > need.two){
+ 	b =  0
+ } else {
+ 	b =  need.two - material.steel;
+ }
+ if(material.chrome > need.three){
+ 	c =  0
+ } else {
+ 	c =  need.three - material.chrome;
+ }
+
+    
+
+	if((material.iron < need.one) || (material.steel < need.two) || (material.chrome < need.three)){
+  	return "The station is destroyed! It needed " + a + " iron, " + b+ " steel and " + c+ " chromium for completion."
+  } else {
+  	return "The station is completed!"
+  }
+	
+}
+    </script>
+</body>
+</html>
