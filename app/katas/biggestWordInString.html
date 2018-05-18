@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>biggest</title>
+</head>
+<body>  
+    <p>Return the length of the longest word in the provided sentence.</p>
+    <script>
+        //First
+        function findLongestWord1(str) {
+            let arr = str.split(' ');
+            let arr2 = [];
+            for (let i  = 0; i < arr.length; i++){
+                arr2.push(arr[i].length);
+            }
+            return Math.max.apply(null, arr2);
+        }
+        //second 
+        // add sort-function
+        function compare(a, b){
+            if(a < b){return 1}
+            if(a > b){return -1}
+        }
+        function findLongestWord2(str) {
+            let arr = str.split(' ');
+            let arr2 = [];
+            for (let i  = 0; i < arr.length; i++){
+                arr2.push(arr[i].length);
+            }
+            arr2.sort(compare);
+            return arr2[0];
+        }
+        //Short
+        function findLongestWordShort(str){
+            let arr = str.split(' ').map(function(item){
+                return item.length;
+            });
+            return arr.sort(compare)[0];
+        }
+    </script>
+</body>
+</html>
