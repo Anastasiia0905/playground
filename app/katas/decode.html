@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Decode</title>
+</head>
+<body>
+   <p>Write a function that accepts an array of integers code and a key number.
+        As the result, it should return string containg a decoded message from the code.</p>
+    <script>
+        function decode (code, n) {
+	let alpha = "0 a b c d e f g h i j k l m n o p q r s t u v w x y z".split(' ');
+	let x,y, i;
+  let baseArr = [];
+  let result = [];
+	let nstr = n.toString().split('');
+  nstr.map(function(item){return Number(item)});
+  for ( x = 0; x < code.length; ){
+			for(y=0; y< nstr.length; y++){
+					baseArr.push(code[x] - nstr[y]);
+          x++;
+          if(x >= code.length){break}
+		}
+	}
+  for (i = 0; i < baseArr.length; i++){
+			result.push(alpha[baseArr[i]]);
+	}
+  
+	return result.join('');
+}
+    </script>
+</body>
+</html>

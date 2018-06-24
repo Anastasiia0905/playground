@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../css/sass/burger.css">
     <link href="../css/sass/big.css" rel='stylesheet'>
+    
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" 
     integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" 
     crossorigin="anonymous">
@@ -17,63 +19,50 @@
 <body>
     <section class='hero'>
         <header class='header'>
-            <div class="logo"><a href="#">KING.</a>
+            <div class="logo"><a href="index.html">KING.</a>
             </div>
                 <div class="nav-toggle">
                  <div class="nav-toggle-bar"></div>
             </div>
             <ul class="nav-menu">
-                <li class="active"><a href="#">Home</a></li>
+                <li class="active-nav-but"><a href="#">Home</a></li>
                 <li><a href="#">Work</a></li>
                 <li><a href="#">About</a></li>
-                <li><a href="#" class="drop">Services<i class="fas fa-angle-down"></i></a>
-                    <ul class="drop-menu">
+                <li class="drop"><a href="#">Services<span class="menu-array fas fa-angle-down"></span></a>
+                    <ul class="drop-menu" >
                         <li><a href="#">Web Design</a></li>
                         <li><a href="#">eCommerce</a></li>
                         <li><a href="#">Branding</a></li>
                         <li><a href="#">API</a></li>
                     </ul>
                 </li>
-                <li><a href="#" class="drop">Tools<i class="fas fa-angle-down"></i></a>
-                    <ul class="drop-menu">
+               <!-- <li class="drop"><a href="#">Tools<span class="menu-array fas fa-angle-down"></span></a>
+                   <ul class="drop-menu">
                         <li><a href="#">HTML5</a></li>
                         <li><a href="#">CSS3</a></li>
                         <li><a href="#">Sass</a></li>
                         <li><a href="#">jQuery</a></li>
                     </ul>
-               </li>
+               </li>-->
                 <li><a href="#">Contact</a></li>
-                <li class="red-bnt"><a>Login</a></li>
+                <li><button class="main-button"><a href="#">Login</a></button></li>
+                
             </ul>
            
         </header>
-        <div></div>
+        <div class="intro">
+            <h1>Start your journey</h1>
+            <p>Lorem ipsum dolor. Labore!</p>
+            <form action="post">
+                <input type="email" placeholder="Enter your email">
+                <button class="main-button" type="submit">Join Now</button>
+            </form>
+        </div>
     </section>
+    <script src="main.js"></script>
     <script>
-    var humburger = {
-        navToggle: document.querySelector('.nav-toggle'),
-        navMenu: document.querySelector('.nav-menu'),
-        onToggle: function(e){
-            e.preventDefault();
-            this.navToggle.classList.toggle('expanted');
-            this.navMenu.classList.toggle('expanted');
-        }
-    };
-    humburger.navToggle.addEventListener('click', function(e){
-        humburger.onToggle(e);
-    });
-
-    var dropDownMenu = document.querySelectorAll('.drop');
-    for(var i = 0; i < dropDownMenu.length; i++){
-        dropDownMenu[i].addEventListener('click', function(e){
-            var dropDownContext = this.nextElementSibling;
-            if (dropDownContext.style.display === 'block'){
-            dropDownContext.style.display = 'none';
-            } else {
-                dropDownContext.style.display = 'block';
-            }
-        });
-    }
+   
+       
    
 
     </script>

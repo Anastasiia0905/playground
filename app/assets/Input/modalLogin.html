@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="styleModal.css">
+    <link href="https://fonts.googleapis.com/css?family=Shrikhand" rel="stylesheet">
+    <title>Modal Login</title>
+</head>
+<body>
+    <h2>Modal Login Form</h2>
+    <button class="showForm" type="button">Login</button>
+    <div class="wrap exposed">
+        <form action="post">
+            <div class="container container-img">
+            <img src="avatar.png" alt="avatar">
+                    <!--crestik-->
+            </div>
+            <div class="container">
+                <label for="username">Username</label>
+                <input type="text" name="username" placeholder="Enter Username" required>
+                <label for="password">Password</label>
+                <input type="password" name="password" placeholder="Enter Password" required>
+                <button type="submit">Login</button>
+                <label>
+                    <input type="checkbox" checked="checked">Remember me
+                </label>
+            </div>
+            <div class="container">
+                <button type="button">Cancel</button>
+                <p>Forgot <a href="#">password?</a></p>
+            </div>
+        </form>
+    </div>
+</body>
+<script>
+    let showForm = document.querySelector('.showForm');
+    let wrap = document.querySelector('.wrap');
+    showForm.addEventListener("click", function(){
+            wrap.classList.toggle('exposed');
+    })
+</script>
+</html>
