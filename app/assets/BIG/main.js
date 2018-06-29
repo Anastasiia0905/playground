@@ -31,3 +31,86 @@ for( let i = 0; i < dropMain.length; i++){
         accord.call(dropMain[i]);
     });
 }
+//// Carousel
+
+let slideSec = document.querySelectorAll(".slide");
+		let	prevArrow = document.querySelector(".prev");
+		let	nextArrow = document.querySelector(".next");
+		let dot = document.querySelector('.dot-group');
+		let	current = 0;
+		//Clear images
+		function reset(){
+			for(let i = 0; i < slideSec.length; i++){
+				slideSec[i].style.display = "none";
+				dot.children[i].classList.remove('active');
+			}
+		}
+		//Init Slide	
+		function showSlide(){
+			reset();
+			slideSec[current].style.display = "block";
+			dot.children[current].classList.add('active');
+		}
+		//Show prev 
+		function slideLeft(){
+			reset();
+			slideSec[current-1].style.display = "block";
+			dot.children[current-1].classList.add('active');
+			current --;
+			
+		}
+		//Show next
+		function slideRight(){
+			reset();
+			slideSec[current+1].style.display = "block";
+			dot.children[current+1].classList.add('active');
+			current ++;
+		}
+		//Show dot
+		function showDot(){
+			reset();
+			slideSec[current].style.display = "block";
+		}
+		//add active class to the dot
+		
+
+		prevArrow.addEventListener('click', function(){
+			if(current === 0){
+				current = slideSec.length;
+			}
+			slideLeft();
+		});
+		nextArrow.addEventListener('click', function(){
+			if(current === slideSec.length-1){
+				current = -1;
+			}
+			slideRight();
+		});
+		dot.addEventListener('click', function(e){
+			let tar = e.target;
+			for(let j in dot.children){
+				if(dot.children[j] == tar){
+
+					current = Number(j);
+					showSlide();
+				}
+			}
+		});
+		document.addEventListener('keydown', function(ev){
+			if(ev.keyCode == 37){
+				if(current === 0){
+				current = slideSec.length;
+			}
+			slideLeft();
+			}
+		 });
+		 document.addEventListener('keydown', function(ev){
+			if(ev.keyCode == 39){
+				if(current === slideSec.length-1){
+				current = -1;
+			}
+			slideRight();
+			}
+		 })
+
+		showSlide();
