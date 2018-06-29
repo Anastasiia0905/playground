@@ -1,13 +1,17 @@
+@charset "UTF-8";
 @font-face {
-  font-family: 'WorkSans-Regular';
-  src: url("../../BIG/fonts/WorkSans-Regular.ttf"); }
+  font-family: 'Conv_WorkSans-Regular';
+  src: url("../../BIG/fonts/WorkSans-Regular/fonts/WorkSans-Regular.eot");
+  src: local("☺"), url("fonts/WorkSans-Regular.woff") format("woff"), url("fonts/WorkSans-Regular.ttf") format("truetype"), url("fonts/WorkSans-Regular.svg") format("svg");
+  font-weight: normal;
+  font-style: normal; }
 
 body {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: "WorkSans-Regular";
+  font-family: "Conv_WorkSans-Regular";
   font-weight: 400;
   font-size: 14px;
   color: #828282;
@@ -31,7 +35,7 @@ body {
 /*-----------------Hero NAV-------------*/
 .hero {
   background: url("../../BIG/images/beach.jpg") center no-repeat;
-  height: 100vh;
+  max-height: 970px;
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -52,11 +56,12 @@ body {
     color: #fff; }
 
 .intro {
-  margin: auto;
+  margin: 1rem auto;
+  margin-bottom: 5rem;
   color: #fff;
   text-align: center; }
   .intro h1 {
-    font-size: 3rem;
+    font-size: 4rem;
     text-transform: uppercase; }
   .intro p {
     font-size: 1.5rem; }
@@ -91,7 +96,7 @@ body {
 
 @media screen and (min-width: 780px) {
   .header {
-    padding: 2.5rem;
+    padding: 5rem;
     width: 90%;
     height: 20vh;
     overflow: hidden;
@@ -111,7 +116,7 @@ body {
     font-size: 1rem;
     width: auto;
     right: 0;
-    padding: 0;
+    padding: 0 0 2rem 0;
     margin: 0;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -130,7 +135,10 @@ body {
       border: 1px solid red; }
     .nav-menu .drop-menu {
       position: absolute;
-      border: 1px solid red;
+      top: 50px;
+      left: -20px;
+      width: 130px;
+      max-height: 10rem;
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
@@ -139,7 +147,124 @@ body {
           -ms-flex-direction: column;
               flex-direction: column;
       list-style-position: inside;
-      padding: 0;
-      max-height: 10rem;
-      left: 0;
-      text-align: left; } }
+      padding: 20px;
+      padding-left: 0;
+      text-align: left;
+      z-index: 20;
+      background: red;
+      border-radius: 4px;
+      overflow: visible; }
+      .nav-menu .drop-menu a {
+        color: black; }
+    .nav-menu .drop-menu::before {
+      content: " " !important;
+      position: absolute;
+      bottom: 100%;
+      margin-left: 35%;
+      width: 0;
+      height: 0;
+      background: red;
+      border-bottom: 10px solid red;
+      border-left: solid transparent;
+      border-right: solid transparent; } }
+
+.about {
+  padding: 3rem;
+  width: auto;
+  height: auto;
+  overflow: hidden; }
+  .about .align-right {
+    width: 100%;
+    -webkit-transform: translateX(30%);
+            transform: translateX(30%); }
+
+.slider-container {
+  position: relative;
+  min-width: 100%;
+  height: 90vh;
+  margin: 0;
+  padding: 0; }
+
+.slide {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%); }
+
+.slide-img {
+  width: 100%;
+  height: 90vh; }
+
+.slide-number, .slide-text,
+.prev, .next {
+  color: #fff;
+  position: absolute; }
+
+.slide-number {
+  font-size: 20px;
+  top: 1rem;
+  left: 1rem; }
+
+.slide-text {
+  position: absolute;
+  bottom: 2rem;
+  width: 100%;
+  font-size: 24px;
+  text-transform: uppercase;
+  letter-spacing: 1rem;
+  text-align: center; }
+
+.prev, .next {
+  cursor: pointer;
+  background: transparent;
+  position: absolute;
+  top: 50%;
+  width: 3rem;
+  height: 3rem;
+  font-size: 2rem;
+  border-radius: 0 3px 3px 0;
+  border: none;
+  outline: none;
+  -webkit-transition: all 1s linear;
+  transition: all 1s linear; }
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px; }
+
+.prev:hover, .next:hover {
+  background: #5f7f86; }
+
+.dot-group {
+  text-align: center;
+  margin: 1rem auto; }
+
+.dot {
+  display: inline-block;
+  margin: 0 0.7rem;
+  cursor: pointer;
+  background: rgba(124, 114, 114, 0.5);
+  height: 17px;
+  width: 17px;
+  border-radius: 50%; }
+
+.active {
+  background: #7c9090; }
+
+.fade {
+  -webkit-animation: fade 1.5s;
+          animation: fade 1.5s; }
+
+@-webkit-keyframes fade {
+  from {
+    opacity: 0.4; }
+  to {
+    opacity: 1; } }
+
+@keyframes fade {
+  from {
+    opacity: 0.4; }
+  to {
+    opacity: 1; } }
