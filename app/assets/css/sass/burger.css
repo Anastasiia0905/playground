@@ -18,13 +18,13 @@
   line-height: 1.4rem; }
   .nav-menu a {
     text-decoration: none;
-    color: rgba(255, 255, 255, 0.5);
+    color: rgba(255, 255, 255, 0.8);
     font-size: 1rem;
     line-height: 1.7rem;
     font-weight: bold; }
   .nav-menu a:hover,
   .nav-menu a:active {
-    color: rgba(255, 255, 255, 0.8); }
+    color: white; }
   .nav-menu .active-nav-but a {
     color: #fff; }
   .nav-menu .main-button {

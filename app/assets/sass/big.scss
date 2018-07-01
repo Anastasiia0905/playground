@@ -1,8 +1,5 @@
 $main-color: rgb(125, 228, 228);
- /*@font-face {
-        
-    }*/
-//$font-primary: 'Conv_WorkSans-Regular';
+$font-primary: 'Montserrat', sans-serif;;
 body{
     box-sizing: border-box;
     margin: 0;
@@ -12,6 +9,7 @@ body{
     font-size: 14px;
     color: #828282;
     background: #fff;
+    text-align: justify;
 }
 .main-button {
     background: rgb(219, 50, 27);
@@ -23,11 +21,9 @@ body{
         padding: 0.5rem 1rem;
     }
 }
-.main-button:hover {
-    box-shadow: 0px 24px 21px -9px rgba(0, 0, 0, 0.418);
-    background: rgb(253, 30, 0);
+.clear {
+    clear: both;
 }
-
 /*-----------------Hero NAV-------------*/
 .hero {
     background: url('../../BIG/images/beach.jpg') center no-repeat;
@@ -49,41 +45,34 @@ body{
   }
   
 }
-
-
-
 .intro {
-   margin: 1rem auto;
+   margin: auto;
    margin-bottom: 5rem;
    color: #fff;
    text-align: center;
+   overflow: hidden;
    h1 {
-       font-size: 4rem;
+       font-size: 2rem;
        text-transform: uppercase;
+   }
+   h2{
+       font-size: 2rem;
    }
    p {
        font-size: 1.5rem;
    }
-   form {
-       width: 90%;
-       margin: 0 auto;
-       display: flex;
-       height: 3rem;
-       input {
-           flex-basis: 80%;
-           border: none;
-           border-radius: 5px 0 0 5px;
-           font-size: 1rem;
-       }
-       input::placeholder {
-        text-align: start;
-        padding-left: 0.5rem;
-       
-       }
-       button {
-            flex-basis: 20%;
-       }
-       
+   .introForm input,
+   .introForm button {
+       border: 1px solid green;
+       padding: 5px;
+       margin: 0;
+   }
+   .introForm input{
+       width: 60%;
+   }
+   .introForm button{
+       width: 20%;
+       margin-left: -10px;
    }
 }
 
@@ -91,7 +80,7 @@ body{
     .header {
         padding: 5rem;
         width: 90%;
-        height: 20vh;
+        height: 30vh;
         overflow: hidden;
         display: flex;
         justify-content: space-between;
@@ -114,7 +103,6 @@ body{
         margin: 0;
         display: flex;
         position: relative;
-        
         li {
             display: inline;
             padding-left: 2rem;
@@ -126,9 +114,13 @@ body{
                 color: #fff;
             }
         }
+        .main-button:hover {
+            box-shadow: 0px 24px 21px -9px rgba(0, 0, 0, 0.5);
+            background-color: red !important;
+        }
+        
         .drop {
             position: relative;
-            border: 1px solid red;
         }
         .drop-menu {
                 position: absolute;
@@ -136,7 +128,6 @@ body{
                 left: -20px;
                 width: 130px;
                 max-height: 10rem;
-                //visibility: hidden;
                 display: flex;
                 flex-direction: column;
                 list-style-position: inside;
@@ -144,42 +135,101 @@ body{
                 padding-left: 0;
                 text-align: left;
                 z-index: 20;
-                background: red;
+                background: rgba(189, 219, 219, 0.8);
                 border-radius: 4px;
                 overflow: visible;
+                opacity: 0;
                 a{
                     color: black; 
                 }
             }
-        .drop-menu::before {
-                content: " " !important;
-                position: absolute;
-                bottom: 100%;
-                margin-left: 35%;
-                width: 0;
-                height: 0;
-                background: red;  
-               border-bottom: 10px solid red;
-               border-left: solid transparent;
-               border-right:  solid transparent;
-        }
+    }
+}
+@keyframes showDrop {
+    from{
+        opacity: 0;
+    }
+    to {
+        opacity: 1
     }
 }
 /// --------------ABOUT Section --------------///
-.about {
-    padding: 3rem;
-    width: auto;
-    height: auto;
-    overflow: hidden;
+
+#about {
+    margin: 1.5rem;
+    .align-left{
+        transform: translateX(-50%) scale(0.8);
+        opacity: 0 !important;
+        transition: transform 0.7s ease-in;
+    }
+    .align-right{
+        transform: translateX(100%) scale(0.8);
+        opacity: 0 !important;
+        transition: transform 1s ease-in-out 0.7s;
+        .myPhoto{
+            width: 90%;
+            height: auto;
+            border-radius: 70%;
+        }
+    }
+    .slide-in.show{
+        visibility: visible;
+        opacity: 1 !important;
+        transform: translateX(0%) scale(1);
+        
+    }
+    
+}
+@media screen and (min-width: 780px){
+    #about{
+        margin: 2rem;
+    }
+    .align-left {
+        float: left;
+        padding: 15% 0;
+        width: 50%;
+    }
     .align-right {
-            width: 100%;
-            //visibility: hidden;
-            transform: translateX(30%);
+        position: relative;
+        float: left;
+        width: 50%;
+        .myPhoto{
+            width: 70%;
+        }
     }
 }
-
+///////----------------Resume -------------///
+#resume {
+    background: lightblue;  
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.education {
+    animation: fadeIn 2s;
+}
+.job {
+    animation: fadeIn 20s; 
+}
+.hobbies {
+    animation: fadeIn 30s;
+}
+@keyframes fadeIn {
+    from{
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+@media screen and (min-width: 780px){
+    #resume > div{
+        max-width: 30%;
+        border: 1px solid red;
+    }
+}
    /// ---------------- Portfolio -----------///
-   .slider-container {
+.slider-container {
     position: relative;
     min-width: 100%;
     height: 90vh;

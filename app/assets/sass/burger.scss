@@ -18,14 +18,14 @@
     line-height: 1.4rem;
     a {
         text-decoration: none;
-        color: rgba(255, 255, 255, 0.5);
+        color: rgba(255, 255, 255, 0.8);
         font-size: 1rem;
         line-height: 1.7rem;      
         font-weight: bold;
     }
     a:hover,
     a:active {
-        color: rgba(255, 255, 255, 0.8);
+        color: rgb(255, 255, 255);
     }
     .active-nav-but a {
         color: #fff;

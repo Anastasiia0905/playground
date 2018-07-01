@@ -7,9 +7,35 @@
     <title>Document</title>
 </head>
 <body>
+    <div class="tab">hrll  </div>
+
     <script>
         //TASK_1
+        function fillSpiralMatrix(n){
+        let matrix = [];
+        let x = 0;
+        let y = 0;
+        let steps = n -1;
+        for(let i = 0; i < n; i++){matrix[i] = []}
+        for(let i = 1; i <= n*n; i++){
+            matrix[x][y] = i;
+        if(x === steps && y === n - steps - 1) steps--;
+
+            // Движение "вправо"
+            if((y >= x && y < steps) || (x - 1 === y && x === n - steps - 1)) y++;
+            // Движение "влево"
+            else if(y <= x && y >= n - steps) y--;
+            // Движение "вниз"
+            else if(x <= y && x < steps) x++;
+            // Движение "вверх"
+            else if(x >= y && x >= n - steps) x--;
         
+        }
+        return matrix;
+
+        }
+
+console.log(fillSpiralMatrix(5));
         //TASK_2
         function arrDiff(arr1, arr2){
             if(arr1.length != arr2.length){return false}

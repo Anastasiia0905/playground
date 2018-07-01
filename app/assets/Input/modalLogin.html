@@ -11,14 +11,15 @@
 <body>
     <h2>Modal Login Form</h2>
     <button class="showForm" type="button">Login</button>
-    <div class="wrap exposed">
+    <div class="wrap">
+        
         <form action="post">
+            <span class="close">&times;</span>            
             <div class="container container-img">
             <img src="avatar.png" alt="avatar">
-                    <!--crestik-->
             </div>
             <div class="container">
-                <label for="username">Username</label>
+                <label for="username"><b>Username</b></label>
                 <input type="text" name="username" placeholder="Enter Username" required>
                 <label for="password">Password</label>
                 <input type="password" name="password" placeholder="Enter Password" required>

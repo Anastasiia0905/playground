@@ -29,8 +29,45 @@ for( let i = 0; i < dropMain.length; i++){
     });
     dropMain[i].addEventListener('mouseleave', function(){
         accord.call(dropMain[i]);
-    });
+	});
 }
+///Drop menu on a big screen
+let navFull = document.querySelector(".drop");
+navFull.addEventListener('click', function(){
+	event.preventDefault();
+	this.lastElementChild.classList.toggle('exp');
+})
+///// Open drop menu on big screen
+
+
+
+//// Slide-in in with scroll
+function debounce(fn, wait = 20, imadiate =true){
+    let timeout;
+    return function(){
+        let context = this, args = arguments;
+        let later = function(){
+            timeout = null;
+            if(!imadiate) fn.apply(context, args);
+        };
+        let callNow = imadiate && !timeout;
+        clearTimeout(timeout);
+        timeout =setTimeout(later, wait);
+        if(callNow) fn.apply(context, args);
+    };
+};
+const slideImages = document.querySelectorAll('.slide-in');
+function checkScroll(e){
+	for(let i = 0; i < slideImages.length; i++){
+    const slideInUp =  (window.scrollY + window.innerHeight) - slideImages[i].offsetHeight/2;
+	const isHasHalf = slideInUp > slideImages[i].offsetTop;
+	if(isHasHalf) slideImages[i].classList.add('show');
+	}
+
+}
+window.addEventListener("scroll", debounce(checkScroll));
+
+
 //// Carousel
 
 let slideSec = document.querySelectorAll(".slide");
