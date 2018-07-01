@@ -24,19 +24,25 @@ function accord(){
   }
 }
 for( let i = 0; i < dropMain.length; i++){
-  dropMain[i].addEventListener('mouseenter', function(){
-        accord.call(dropMain[i]);
-    });
-    dropMain[i].addEventListener('mouseleave', function(){
-        accord.call(dropMain[i]);
-	});
+	if (window.matchMedia('(min-width: 780px)').matches) {
+		dropMain[i].addEventListener("mouseenter", function(){
+			this.lastElementChild.classList.add('exp');
+		});
+		dropMain[i].addEventListener("mouseleave", function(){
+			this.lastElementChild.classList.remove('exp');
+		});
+  	
+	} else {
+		dropMain[i].addEventListener('mouseenter', function(){
+			accord.call(dropMain[i]);
+		});
+		dropMain[i].addEventListener('mouseleave', function(){
+			accord.call(dropMain[i]);
+		});
+	}
 }
 ///Drop menu on a big screen
-let navFull = document.querySelector(".drop");
-navFull.addEventListener('click', function(){
-	event.preventDefault();
-	this.lastElementChild.classList.toggle('exp');
-})
+
 ///// Open drop menu on big screen
 
 

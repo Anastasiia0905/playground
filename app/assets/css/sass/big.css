@@ -11,13 +11,13 @@ body {
   text-align: justify; }
 
 .main-button {
-  background: #db321b;
+  background: #70165d;
   border: none;
   -webkit-transition: ease-in 0.2s;
   transition: ease-in 0.2s;
-  border-radius: 0 5px 5px 0; }
+  border-radius: 0 5px 5px 0;
+  color: #fff; }
   .main-button a {
-    color: #fff;
     padding: 0.5rem 1rem; }
 
 .clear {
@@ -25,8 +25,8 @@ body {
 
 /*-----------------Hero NAV-------------*/
 .hero {
-  background: url("../../BIG/images/beach.jpg") center no-repeat;
-  max-height: 970px;
+  background: url("../../BIG/images/hero.jpg") center no-repeat;
+  height: 100vh;
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -34,7 +34,8 @@ body {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
-          flex-direction: column; }
+          flex-direction: column;
+  overflow: hidden; }
 
 .logo {
   margin: 0;
@@ -61,11 +62,13 @@ body {
     font-size: 1.5rem; }
   .intro .introForm input,
   .intro .introForm button {
-    border: 1px solid green;
+    border: none;
     padding: 5px;
     margin: 0; }
   .intro .introForm input {
     width: 60%; }
+  .intro .introForm input:focus {
+    outline: 0; }
   .intro .introForm button {
     width: 20%;
     margin-left: -10px; }
@@ -97,54 +100,41 @@ body {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    position: relative;
-    /*.drop-menu {
-                position: absolute;
-                top: 50px;
-                left: -20px;
-                width: 130px;
-                max-height: 10rem;
-                display: flex;
-                flex-direction: column;
-                list-style-position: inside;
-                padding: 20px;
-                padding-left: 0;
-                text-align: left;
-                z-index: 20;
-                background: rgba(189, 219, 219, 0.8);
-                border-radius: 4px;
-                overflow: visible;
-                opacity: 0;
-                a{
-                    color: black; 
-                }
-            }*/ }
+    position: relative; }
     .nav-menu li {
       display: inline;
       padding-left: 2rem; }
-    .nav-menu .main-button {
-      background: #db321b;
-      border-radius: 5px; }
-      .nav-menu .main-button a {
-        color: #fff; }
     .nav-menu .main-button:hover {
-      -webkit-box-shadow: 0px 24px 21px -9px rgba(0, 0, 0, 0.5);
-              box-shadow: 0px 24px 21px -9px rgba(0, 0, 0, 0.5);
-      background-color: red !important; }
+      border-radius: 5px;
+      background: #70165d !important; }
     .nav-menu .drop {
-      position: relative; } }
-
-@-webkit-keyframes showDrop {
-  from {
-    opacity: 0; }
-  to {
-    opacity: 1; } }
-
-@keyframes showDrop {
-  from {
-    opacity: 0; }
-  to {
-    opacity: 1; } }
+      position: relative; }
+    .nav-menu .drop-menu {
+      position: absolute;
+      top: 50px;
+      left: -20px;
+      width: 130px;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column;
+      list-style-position: inside;
+      padding: 20px;
+      padding-left: 0;
+      text-align: left;
+      z-index: 20;
+      background: rgba(189, 219, 219, 0.8);
+      border-radius: 4px;
+      overflow: visible;
+      opacity: 0; }
+      .nav-menu .drop-menu a {
+        color: black; }
+    .nav-menu .drop-menu.exp {
+      max-height: 10rem;
+      opacity: 1; } }
 
 #about {
   margin: 1.5rem; }
@@ -176,15 +166,16 @@ body {
 
 @media screen and (min-width: 780px) {
   #about {
-    margin: 2rem; }
+    margin: 2rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex; }
   .align-left {
-    float: left;
     padding: 15% 0;
-    width: 50%; }
+    max-width: 50%; }
   .align-right {
     position: relative;
-    float: left;
-    width: 50%; }
+    max-width: 50%; }
     .align-right .myPhoto {
       width: 70%; } }
 
