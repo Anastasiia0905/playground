@@ -10,6 +10,7 @@ body{
     color: #828282;
     background: #fff;
     text-align: justify;
+    line-height: 1.5;
 }
 .main-button {
     background: rgb(112, 22, 93);
@@ -148,8 +149,20 @@ body{
     }
 }
 /// --------------ABOUT Section --------------///
-
-#about {
+    #about {
+        color: #000;
+        .aboutWrap{
+            margin: 0 1rem; 
+        }
+        h1 {
+            font-size: 10vw;
+            text-align: center;
+        }
+        h3 {
+            font-size: 1rem;
+        }
+    }
+/*#about {
     margin: 1.5rem;
     .align-left{
         transform: translateX(-50%) scale(0.8);
@@ -187,10 +200,11 @@ body{
         position: relative;
         max-width: 50%;
         .myPhoto{
-            width: 70%;
+            width: 10%;
+            height: 10%;
         }
     }
-}
+}*/
 ///////----------------Resume -------------///
 #resume {
     background: lightblue;  
