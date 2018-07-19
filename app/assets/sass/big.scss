@@ -12,12 +12,12 @@ body{
     text-align: justify;
 }
 .main-button {
-    background: rgb(219, 50, 27);
+    background: rgb(112, 22, 93);
     border: none;
-    transition: ease-in 0.2s;
+    transition: ease-in 0.2s;   
     border-radius: 0 5px 5px 0;
+    color: #fff;
     a {
-        color: #fff;
         padding: 0.5rem 1rem;
     }
 }
@@ -26,12 +26,12 @@ body{
 }
 /*-----------------Hero NAV-------------*/
 .hero {
-    background: url('../../BIG/images/beach.jpg') center no-repeat;
-    max-height: 970px;
+    background: url('../../BIG/images/hero.jpg') center no-repeat;
+    height: 100vh;
     position: relative;
     display: flex;
     flex-direction: column;
-    
+    overflow: hidden;
 }
 .logo {
     margin: 0;
@@ -63,13 +63,16 @@ body{
    }
    .introForm input,
    .introForm button {
-       border: 1px solid green;
+       border: none;
        padding: 5px;
        margin: 0;
    }
    .introForm input{
        width: 60%;
    }
+   .introForm input:focus {
+        outline: 0;
+    }
    .introForm button{
        width: 20%;
        margin-left: -10px;
@@ -77,6 +80,9 @@ body{
 }
 
 @media screen and (min-width: 780px){
+    .hero {
+        background-attachment: fixed;
+    }
     .header {
         padding: 5rem;
         width: 90%;
@@ -107,16 +113,9 @@ body{
             display: inline;
             padding-left: 2rem;
         }
-        .main-button {
-             background: rgb(219, 50, 27);
-             border-radius: 5px;
-            a {
-                color: #fff;
-            }
-        }
         .main-button:hover {
-            box-shadow: 0px 24px 21px -9px rgba(0, 0, 0, 0.5);
-            background-color: red !important;
+            border-radius: 5px;
+            background: rgb(112, 22, 93) !important;
         }
         
         .drop {
@@ -127,7 +126,6 @@ body{
                 top: 50px;
                 left: -20px;
                 width: 130px;
-                max-height: 10rem;
                 display: flex;
                 flex-direction: column;
                 list-style-position: inside;
@@ -143,14 +141,10 @@ body{
                     color: black; 
                 }
             }
-    }
-}
-@keyframes showDrop {
-    from{
-        opacity: 0;
-    }
-    to {
-        opacity: 1
+        .drop-menu.exp{
+            max-height: 10rem;
+            opacity: 1;  
+        }
     }
 }
 /// --------------ABOUT Section --------------///
@@ -183,16 +177,15 @@ body{
 @media screen and (min-width: 780px){
     #about{
         margin: 2rem;
+        display: flex;
     }
     .align-left {
-        float: left;
         padding: 15% 0;
-        width: 50%;
+        max-width: 50%;
     }
     .align-right {
         position: relative;
-        float: left;
-        width: 50%;
+        max-width: 50%;
         .myPhoto{
             width: 70%;
         }

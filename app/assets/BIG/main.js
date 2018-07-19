@@ -1,11 +1,13 @@
 // Burger menu
 let humburger = {
     navToggle: document.querySelector('.nav-toggle'),
-    navMenu: document.querySelector('.nav-menu'),
+	navMenu: document.querySelector('.nav-menu'),
+	body: document.querySelector('body'),
     onToggle: function(e){
         e.preventDefault();
         this.navToggle.classList.toggle('expanted');
-        this.navMenu.classList.toggle('expanted');
+		this.navMenu.classList.toggle('expanted');
+		this.body.classList.toggle('expanted');
     }
 };
 humburger.navToggle.addEventListener('click', function(e){

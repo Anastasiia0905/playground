@@ -74,6 +74,8 @@ body {
     margin-left: -10px; }
 
 @media screen and (min-width: 780px) {
+  .hero {
+    background-attachment: fixed; }
   .header {
     padding: 5rem;
     width: 90%;
