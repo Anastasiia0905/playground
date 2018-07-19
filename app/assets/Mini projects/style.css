@@ -1,0 +1,43 @@
+body, html {
+    margin: 0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.wrap {
+    height: 100vh;
+    background: #efecb6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cardBox {
+    position: relative;
+    width: 300px;
+    height: 400px;
+}
+.card {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 1s;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+.front {
+    background: #fff;
+}
+.back {
+    background: #72bcc1;
+    transform: rotateY(180deg);
+}
+.cardBox .front.switch{
+    transform: rotateY(180deg);
+}
+.cardBox .back.switch{
+    transform: rotateY(360deg);
+}
+
