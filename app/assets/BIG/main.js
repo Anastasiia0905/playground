@@ -49,7 +49,7 @@ for( let i = 0; i < dropMain.length; i++){
 
 
 
-//// Slide-in in with scroll
+/*//// Slide-in in with scroll
 function debounce(fn, wait = 20, imadiate =true){
     let timeout;
     return function(){
@@ -74,7 +74,7 @@ function checkScroll(e){
 
 }
 window.addEventListener("scroll", debounce(checkScroll));
-
+*/	
 
 //// Carousel
 
