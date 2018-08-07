@@ -1,13 +1,14 @@
-$main-color: rgb(125, 228, 228);
-$font-primary: 'Montserrat', sans-serif;;
+
+//$font-primary: 'Montserrat', sans-serif;;
+$font-size: 14px;
 body{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
     font-family: $font-primary;
     font-weight: 400;
-    font-size: 14px;
-    color: #828282;
+    font-size: $font-size;
+    color: red;
     background: #fff;
     text-align: justify;
     line-height: 1.5;
@@ -25,6 +26,11 @@ body{
 .clear {
     clear: both;
 }
+#skills, #work,
+#contact, footer {
+    height: 300px;
+    border: 1px solid red;
+}
 /*-----------------Hero NAV-------------*/
 .hero {
     background: url('../../BIG/images/hero.jpg') center no-repeat;
@@ -39,7 +45,7 @@ body{
     margin: 0;
     padding: 1rem;
         a{
-    font-size: 24px;
+    font-size: $font-size*2;
     text-transform: uppercase;
     font-weight: bold;
     text-decoration: none;
@@ -216,34 +222,15 @@ body{
         }
     }
 ///////----------------Resume -------------///
-#resume {
-    background: lightblue;  
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+.progressiveBar {
+    height: auto;
+    width: 80%;
+    border: 1px solid red;
 }
-.education {
-    animation: fadeIn 2s;
-}
-.job {
-    animation: fadeIn 20s; 
-}
-.hobbies {
-    animation: fadeIn 30s;
-}
-@keyframes fadeIn {
-    from{
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-@media screen and (min-width: 780px){
-    #resume > div{
-        max-width: 30%;
-        border: 1px solid red;
-    }
+.progress {
+    width: 2%;
+    background-color: green;
+    height: 20px;    
 }
    /// ---------------- Portfolio -----------///
 .slider-container {
