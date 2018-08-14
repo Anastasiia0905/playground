@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Raleway:300i,400,400i,500,500i,600,600i,700,800");
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700,900");
 html, body {
   margin: 0;
   padding: 0;
@@ -9,9 +10,10 @@ html, body {
   font-family: "Raleway", sans-serif; }
 
 p {
-  font-size: 15px; }
+  font-size: 15px;
+  line-height: 24px; }
 
-section.hero .wraper header, section.hero .wraper header .logo, section.hero .wraper header ul, section.hero .wraper .elements {
+section.hero .wraper header, section.hero .wraper header .logo, section.hero .wraper header ul, section.hero .wraper .elements, section.easy .wraper .tool, section.easy .wraper .tool .toolItem {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -26,18 +28,30 @@ section.hero .wraper header ul {
 section.hero .wraper header ul li a, section.hero .wraper header .navBut {
   text-decoration: none; }
 
-section.hero .wraper {
+section.hero .wraper, section.easy .wraper {
   max-width: 1440px;
   width: 80%;
   position: relative;
   margin: 0 auto; }
 
+section.hero .wraper .elements .text button {
+  height: 55px;
+  width: 160px;
+  font-family: "Roboto", sans-serif;
+  font-size: 15px;
+  text-transform: uppercase;
+  border-radius: 5px;
+  border: none; }
+
 section.hero {
   background: url("../../Dart/img/header.png") center center no-repeat;
   background-size: cover;
-  color: #fff; }
+  color: #fff;
+  position: relative;
+  border: 1px solid transparent; }
   section.hero .wraper {
-    border: 1px solid red; }
+    height: 80vh;
+    overflow: hidden; }
     section.hero .wraper header {
       -webkit-box-pack: justify;
           -ms-flex-pack: justify;
@@ -67,8 +81,71 @@ section.hero {
         padding: 10px 20px;
         border-radius: 5px; }
     section.hero .wraper .elements {
+      position: absolute;
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+              transform: translateY(-50%);
       -ms-flex-wrap: nowrap;
           flex-wrap: nowrap;
       -webkit-box-pack: justify;
           -ms-flex-pack: justify;
               justify-content: space-between; }
+      section.hero .wraper .elements .text {
+        padding: 0;
+        margin: 0;
+        max-width: 45%; }
+        section.hero .wraper .elements .text h1 {
+          font-size: calc(15px * 3.6);
+          text-transform: uppercase; }
+        section.hero .wraper .elements .text h5 {
+          font-size: calc(15px * 1.2);
+          font-weight: 400;
+          line-height: 24px; }
+        section.hero .wraper .elements .text button:first-of-type {
+          background: #061e37;
+          color: #fff;
+          margin-right: 30px; }
+        section.hero .wraper .elements .text button:last-of-type {
+          background: #fff;
+          color: #061e37; }
+      section.hero .wraper .elements .video {
+        -ms-flex-item-align: center;
+            align-self: center;
+        max-height: 320px;
+        max-width: 45%; }
+
+section.easy {
+  position: relative; }
+  section.easy .wraper {
+    color: #d1d9dd; }
+    section.easy .wraper .title {
+      max-width: 580px;
+      margin: 100px auto;
+      text-align: center; }
+      section.easy .wraper .title h2 {
+        font-size: calc(15px * 3.6);
+        color: #061e37; }
+      section.easy .wraper .title h3 {
+        font-size: calc(fontNormal * 1.6);
+        color: #d1d9dd; }
+    section.easy .wraper .tool {
+      -ms-flex-wrap: nowrap;
+          flex-wrap: nowrap;
+      -webkit-box-pack: justify;
+          -ms-flex-pack: justify;
+              justify-content: space-between; }
+      section.easy .wraper .tool .toolItem {
+        -ms-flex-wrap: nowrap;
+            flex-wrap: nowrap;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        text-align: center;
+        width: 25%; }
+        section.easy .wraper .tool .toolItem h4 {
+          font-size: calc(fontNormal * 1.3);
+          color: #061e37; }

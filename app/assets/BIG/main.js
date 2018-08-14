@@ -13,7 +13,7 @@ let humburger = {
 humburger.navToggle.addEventListener('click', function(e){
     humburger.onToggle(e);
 });
-// Accordion on burger menu
+/*// Accordion on burger menu
 let dropMain = document.querySelectorAll('.drop');
 function accord(){
     let ar = this.querySelector('.menu-array');
@@ -43,13 +43,27 @@ for( let i = 0; i < dropMain.length; i++){
 		});
 	}
 }
+//Sticky nav-bar 
+window.onscroll = function(){
+	fixNav();
+}
+let header = document.querySelector('.header');
+let sticky = header.offsetTop;
+function fixNav(){
+		if(window.pageYOffset > sticky){
+			header.classList.add('sticky');
+		}
+		else {
+			header.classList.remove('sticky');
+		}
+}
 ///Drop menu on a big screen
 
 ///// Open drop menu on big screen
 
 
 
-/*//// Slide-in in with scroll
+//// Slide-in in with scroll
 function debounce(fn, wait = 20, imadiate =true){
     let timeout;
     return function(){
@@ -74,7 +88,7 @@ function checkScroll(e){
 
 }
 window.addEventListener("scroll", debounce(checkScroll));
-*/	
+	
 
 //// Carousel
 
@@ -158,4 +172,4 @@ let slideSec = document.querySelectorAll(".slide");
 			}
 		 })
 
-		showSlide();
+		showSlide();*/
