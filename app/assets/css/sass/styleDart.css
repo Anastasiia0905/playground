@@ -13,7 +13,7 @@ p {
   font-size: 15px;
   line-height: 24px; }
 
-section.hero .wraper header, section.hero .wraper header .logo, section.hero .wraper header ul, section.hero .wraper .elements, section.easy .wraper .tool, section.easy .wraper .tool .toolItem {
+section.hero .wraper header, section.hero .wraper header .logo, section.hero .wraper header ul, section.hero .wraper .elements, section.easy .wraper .tool, section.easy .wraper .tool .toolItem, section.count, section.count .countBlock, section.service .wraper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -28,20 +28,22 @@ section.hero .wraper header ul {
 section.hero .wraper header ul li a, section.hero .wraper header .navBut {
   text-decoration: none; }
 
-section.hero .wraper, section.easy .wraper {
+section.hero .wraper, section.easy .wraper, section.service .wraper {
   max-width: 1440px;
   width: 80%;
   position: relative;
   margin: 0 auto; }
 
-section.hero .wraper .elements .text button {
+section.hero .wraper .elements .text button, section.easy .wraper button {
   height: 55px;
   width: 160px;
   font-family: "Roboto", sans-serif;
   font-size: 15px;
   text-transform: uppercase;
   border-radius: 5px;
-  border: none; }
+  border: none;
+  -webkit-box-shadow: 0px 5px 1rem #000;
+          box-shadow: 0px 5px 1rem #000; }
 
 section.hero {
   background: url("../../Dart/img/header.png") center center no-repeat;
@@ -117,23 +119,27 @@ section.hero {
 section.easy {
   position: relative; }
   section.easy .wraper {
-    color: #d1d9dd; }
+    margin-bottom: 100px;
+    color: #d1d9dd;
+    height: 100vh;
+    max-height: 800px; }
     section.easy .wraper .title {
       max-width: 580px;
       margin: 100px auto;
       text-align: center; }
       section.easy .wraper .title h2 {
-        font-size: calc(15px * 3.6);
+        font-size: calc(15px * 3);
         color: #061e37; }
       section.easy .wraper .title h3 {
-        font-size: calc(fontNormal * 1.6);
+        font-size: calc(15px * 1.6);
         color: #d1d9dd; }
     section.easy .wraper .tool {
       -ms-flex-wrap: nowrap;
           flex-wrap: nowrap;
       -webkit-box-pack: justify;
           -ms-flex-pack: justify;
-              justify-content: space-between; }
+              justify-content: space-between;
+      margin: 80px auto; }
       section.easy .wraper .tool .toolItem {
         -ms-flex-wrap: nowrap;
             flex-wrap: nowrap;
@@ -147,5 +153,62 @@ section.easy {
         text-align: center;
         width: 25%; }
         section.easy .wraper .tool .toolItem h4 {
-          font-size: calc(fontNormal * 1.3);
+          font-size: calc(15px * 1.3);
           color: #061e37; }
+    section.easy .wraper button {
+      background-color: #1de9b6;
+      color: #fff;
+      display: block;
+      margin: 0 auto; }
+
+section.count {
+  color: #fff;
+  font-weight: bold; }
+  section.count .countBlock {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    height: 150px; }
+    section.count .countBlock .svgIcon {
+      margin-right: 25px; }
+  section.count .block1 {
+    background-color: #80d8ff; }
+  section.count .block2 {
+    background-color: #82b1ff; }
+  section.count .block3 {
+    background-color: #b388ff; }
+  section.count .block4 {
+    background-color: #ea80fc; }
+
+section.service {
+  position: relative; }
+  section.service .wraper {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column; }
+    section.service .wraper .textService {
+      text-align: center;
+      max-width: 580px;
+      margin: 100px auto;
+      margin-bottom: 50px; }
+      section.service .wraper .textService h2 {
+        font-size: calc(15px * 3); }
+      section.service .wraper .textService p {
+        color: #d1d9dd; }
+    section.service .wraper .dropMenu {
+      width: calc(100% - 44%);
+      max-width: 800px;
+      margin: 0 auto; }
+    section.service .wraper .dropMenuBlock {
+      margin-bottom: 20px;
+      padding: 25px;
+      -webkit-box-shadow: 1px 7px 10px rgba(0, 0, 0, 0.3);
+              box-shadow: 1px 7px 10px rgba(0, 0, 0, 0.3);
+      border-radius: 5px; }

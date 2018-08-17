@@ -5,9 +5,9 @@ $Raleway: 'Raleway', sans-serif;
 $Roboto: 'Roboto', sans-serif;
 $fontNormal: 15px;
 $h1: calc(#{$fontNormal} * 3.6);
-$h2: calc(#{fontNormal} * 3);
-$h3: calc(#{fontNormal} * 1.6);
-$h4: calc(#{fontNormal} * 1.3);
+$h2: calc(#{$fontNormal} * 3);
+$h3: calc(#{$fontNormal} * 1.6);
+$h4: calc(#{$fontNormal} * 1.3);
 $h5: calc(#{$fontNormal} * 1.2);
 
 $colorTop: #fff;
@@ -56,4 +56,5 @@ p {
     text-transform: uppercase;
     border-radius: 5px;
     border: none;
+    box-shadow: 0px 5px 1rem #000;
 }
