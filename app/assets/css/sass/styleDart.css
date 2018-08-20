@@ -13,7 +13,7 @@ p {
   font-size: 15px;
   line-height: 24px; }
 
-section.hero .wraper header, section.hero .wraper header .logo, section.hero .wraper header ul, section.hero .wraper .elements, section.easy .wraper .tool, section.easy .wraper .tool .toolItem, section.count, section.count .countBlock, section.service .wraper {
+section.hero .wraper header, section.hero .wraper header .logo, section.hero .wraper header ul, section.hero .wraper .elements, section.easy .wraper .tool, section.easy .wraper .tool .toolItem, section.count, section.count .countBlock, section.service .wraper, section.service .wraper .dropMenuBlock .groupUp, section.service .wraper .dropMenuBlock .groupDown, section.testimonails .wrapper, section.testimonails .wrapper .feedBack, section.testimonails .wrapper .feedBack .comment {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -28,13 +28,13 @@ section.hero .wraper header ul {
 section.hero .wraper header ul li a, section.hero .wraper header .navBut {
   text-decoration: none; }
 
-section.hero .wraper, section.easy .wraper, section.service .wraper {
+section.hero .wraper, section.easy .wraper, section.service .wraper, section.testimonails .wrapper {
   max-width: 1440px;
   width: 80%;
   position: relative;
   margin: 0 auto; }
 
-section.hero .wraper .elements .text button, section.easy .wraper button {
+section.hero .wraper .elements .text button, section.easy .wraper button, section.testimonails .wrapper .textTitile button {
   height: 55px;
   width: 160px;
   font-family: "Roboto", sans-serif;
@@ -162,6 +162,7 @@ section.easy {
       margin: 0 auto; }
 
 section.count {
+  position: relative;
   color: #fff;
   font-weight: bold; }
   section.count .countBlock {
@@ -203,12 +204,63 @@ section.service {
       section.service .wraper .textService p {
         color: #d1d9dd; }
     section.service .wraper .dropMenu {
-      width: calc(100% - 44%);
+      width: calc(100% - 36%);
       max-width: 800px;
       margin: 0 auto; }
     section.service .wraper .dropMenuBlock {
       margin-bottom: 20px;
-      padding: 25px;
+      padding: 20px 25px;
       -webkit-box-shadow: 1px 7px 10px rgba(0, 0, 0, 0.3);
               box-shadow: 1px 7px 10px rgba(0, 0, 0, 0.3);
       border-radius: 5px; }
+      section.service .wraper .dropMenuBlock .groupUp {
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center; }
+        section.service .wraper .dropMenuBlock .groupUp p {
+          text-transform: uppercase;
+          font-weight: bold; }
+        section.service .wraper .dropMenuBlock .groupUp .icon {
+          margin-right: 25px; }
+        section.service .wraper .dropMenuBlock .groupUp .arrow {
+          margin-left: auto; }
+      section.service .wraper .dropMenuBlock .groupDown {
+        -ms-flex-wrap: nowrap;
+            flex-wrap: nowrap; }
+        section.service .wraper .dropMenuBlock .groupDown img {
+          width: 33%;
+          max-height: 155px;
+          margin-right: 30px; }
+
+section.testimonails {
+  position: relative;
+  background: url("../../Dart/img/testimonailsBG.png") center center no-repeat;
+  background-size: cover;
+  max-height: 565px;
+  margin: 100px auto; }
+  section.testimonails .wrapper {
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding: 30px 0; }
+    section.testimonails .wrapper .textTitile {
+      color: #fff; }
+      section.testimonails .wrapper .textTitile h2 {
+        font-size: calc(15px * 3); }
+      section.testimonails .wrapper .textTitile button {
+        color: #fff;
+        background-color: #061e37;
+        margin-top: 80px; }
+    section.testimonails .wrapper .feedBack {
+      position: relative; }
+      section.testimonails .wrapper .feedBack .arrow {
+        color: #fff;
+        font-size: 30px;
+        cursor: pointer; }
+      section.testimonails .wrapper .feedBack .comment {
+        -ms-flex-wrap: nowrap;
+            flex-wrap: nowrap; }
+        section.testimonails .wrapper .feedBack .comment .commentText {
+          border: 1px solid green; }

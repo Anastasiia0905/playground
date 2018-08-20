@@ -138,6 +138,7 @@
  }
  section.count {
      @extend %flex;
+     position: relative;
      color: $colorTop;
      font-weight: bold;
      .countBlock{
@@ -182,15 +183,81 @@
              }
          }
          .dropMenu{
-             width: calc(100% - 44%);
+             width: calc(100% - 36%);
              max-width: 800px;
              margin: 0 auto;
          }
          .dropMenuBlock {
              margin-bottom: 20px;
-             padding: 25px;
+             padding: 20px 25px;
              box-shadow: 1px 7px 10px  rgba(0,0, 0, 0.3);
              border-radius: 5px;
+             .groupUp {
+                @extend %flex;
+                align-items: center;
+                p {
+                    text-transform: uppercase;
+                    font-weight: bold;
+                }
+                .icon {
+                    margin-right: 25px;
+                }
+                .arrow {
+                    margin-left: auto;
+                }
+             }
+             .groupDown {
+                 @extend %flex;
+                 flex-wrap: nowrap;
+                 img {
+                     width: 33%;
+                     max-height: 155px;
+                     margin-right: 30px;
+                 }
+             }
+
          }
         }
+ }
+ section.testimonails {
+     position: relative;
+     background: url('../../Dart/img/testimonailsBG.png') center center no-repeat;
+     background-size: cover;
+     max-height: 565px;
+     margin: 100px auto;
+     .wrapper{
+         @extend %wrapper;
+         @extend %flex;
+         flex-wrap: nowrap;
+         align-items: center;
+        padding: 30px 0;
+        .textTitile {
+            color: $colorTop;
+            h2 {
+                font-size: $h2;
+            }
+            button {
+                @extend %button;
+                color: $colorTop;
+                background-color: $titleColor;
+                margin-top: 80px;
+            }
+        }
+        .feedBack {
+            @extend %flex;
+            position: relative;
+            .arrow {
+                color: $colorTop;
+                font-size: 30px;
+                cursor: pointer;
+            }
+            .comment {
+                @extend %flex;
+                flex-wrap: nowrap;
+                .commentText {
+                    border: 1px solid green;
+                }
+            }
+        }
+     }
  }
