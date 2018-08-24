@@ -13,7 +13,7 @@ p {
   font-size: 15px;
   line-height: 24px; }
 
-section.hero .wraper header, section.hero .wraper header .logo, section.hero .wraper header ul, section.hero .wraper .elements, section.easy .wraper .tool, section.easy .wraper .tool .toolItem, section.count, section.count .countBlock, section.service .wraper, section.service .wraper .dropMenuBlock .groupUp, section.service .wraper .dropMenuBlock .groupDown, section.testimonails .wrapper, section.testimonails .wrapper .feedBack, section.testimonails .wrapper .feedBack .comment, section.team .wrapper .teamPeople {
+section.hero .wraper header, section.hero .wraper header .logo, section.hero .wraper header ul, section.hero .wraper .elements, section.easy .wraper .tool, section.easy .wraper .tool .toolItem, section.count, section.count .countBlock, section.service .wraper, section.service .wraper .dropMenuBlock .groupUp, section.service .wraper .dropMenuBlock .groupDown, section.testimonails .wrapper, section.testimonails .wrapper .feedBack, section.testimonails .wrapper .feedBack .comment, section.team .wrapper .teamPeople, section.contact .wrapper .sub-form, section.contact .wrapper .sub-form .field-radio {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -28,13 +28,13 @@ section.hero .wraper header ul {
 section.hero .wraper header ul li a, section.hero .wraper header .navBut {
   text-decoration: none; }
 
-section.hero .wraper, section.easy .wraper, section.service .wraper, section.testimonails .wrapper, section.team .wrapper {
+section.hero .wraper, section.easy .wraper, section.service .wraper, section.testimonails .wrapper, section.team .wrapper, section.contact .wrapper {
   max-width: 1440px;
   width: 80%;
   position: relative;
   margin: 0 auto; }
 
-section.hero .wraper .elements .text button, section.easy .wraper button, section.testimonails .wrapper .textTitile button {
+section.hero .wraper .elements .text button, section.easy .wraper button, section.testimonails .wrapper .textTitile button, section.contact .wrapper .sub-form button {
   height: 55px;
   width: 160px;
   font-family: "Roboto", sans-serif;
@@ -44,6 +44,15 @@ section.hero .wraper .elements .text button, section.easy .wraper button, sectio
   border: none;
   -webkit-box-shadow: 0px 5px 1rem #000;
           box-shadow: 0px 5px 1rem #000; }
+
+section.team .wrapper .socialNail0, section.team .wrapper .socialNail1, section.team .wrapper .socialNail2, section.team .wrapper .socialNail3, section.team .wrapper .socialNail4 {
+  margin: 30px auto 90px auto;
+  padding: 0;
+  height: 20px;
+  width: 35px;
+  display: inline-block;
+  background-image: url("c");
+  background-repeat: no-repeat; }
 
 section.hero {
   background: url("../../Dart/img/header.png") center center no-repeat;
@@ -304,7 +313,8 @@ section.team .wrapper {
     margin: 0; }
   section.team .wrapper h2 {
     font-size: calc(15px * 3);
-    margin-bottom: 20px; }
+    margin-bottom: 20px;
+    color: #061e37; }
   section.team .wrapper h5 {
     font-size: calc(15px * 1.2);
     margin-bottom: 20px; }
@@ -336,11 +346,71 @@ section.team .wrapper {
               box-shadow: 0 0 5px 1px #d1d9dd;
       -webkit-filter: blur(0) grayscale(0);
               filter: blur(0) grayscale(0); }
-  section.team .wrapper .social {
-    margin: 0 auto;
-    height: 20px;
-    width: 260px;
-    background-image: url("../../Dart/img/socialicon.png");
-    background-repeat: no-repeat;
-    background-position: center center;
-    border: 1px solid red; }
+  section.team .wrapper .socialNail0 {
+    background-position: 0px 0; }
+  section.team .wrapper .socialNail1 {
+    background-position: -44px 0; }
+  section.team .wrapper .socialNail2 {
+    background-position: -88px 0; }
+  section.team .wrapper .socialNail3 {
+    background-position: -132px 0; }
+  section.team .wrapper .socialNail4 {
+    background-position: -176px 0; }
+
+section.contact {
+  background: #fafafa; }
+  section.contact .wrapper {
+    width: 50%;
+    text-align: center;
+    padding: 45px 0 90px 0;
+    color: #061e37; }
+    section.contact .wrapper h2 {
+      font-size: calc(15px * 3); }
+    section.contact .wrapper p {
+      font-size: 15px; }
+    section.contact .wrapper .sub-form {
+      -webkit-box-pack: justify;
+          -ms-flex-pack: justify;
+              justify-content: space-between;
+      margin: 50px; }
+      section.contact .wrapper .sub-form .field-wrap {
+        width: 45%; }
+        section.contact .wrapper .sub-form .field-wrap label {
+          position: absolute;
+          padding: 20px;
+          font-size: 14px; }
+        section.contact .wrapper .sub-form .field-wrap input, section.contact .wrapper .sub-form .field-wrap textarea {
+          width: 100%;
+          height: 50px;
+          margin-bottom: 20px;
+          border: 1px solid #000;
+          border-radius: 5px;
+          background-color: transparent; }
+      section.contact .wrapper .sub-form .field-wrap.area {
+        width: 100%; }
+      section.contact .wrapper .sub-form .field-radio {
+        position: relative;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center; }
+        section.contact .wrapper .sub-form .field-radio input[type=radio] {
+          opacity: 0.3;
+          width: 10px;
+          height: 10px;
+          margin-right: 15px;
+          z-index: 10; }
+        section.contact .wrapper .sub-form .field-radio .check {
+          display: inline-block;
+          position: absolute;
+          width: 25px;
+          height: 25px;
+          top: 50%;
+          -webkit-transform: translateY(-50%);
+                  transform: translateY(-50%);
+          left: 0;
+          background: url("../../Dart/img/unchecked.png") center center;
+          background-size: cover; }
+      section.contact .wrapper .sub-form button {
+        width: 130px;
+        background-color: #1de9b6;
+        color: #fff; }
