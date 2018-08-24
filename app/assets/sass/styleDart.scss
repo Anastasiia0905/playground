@@ -245,19 +245,106 @@
         }
         .feedBack {
             @extend %flex;
-            position: relative;
+            justify-content: flex-end;
+            margin: 95px auto;
             .arrow {
                 color: $colorTop;
                 font-size: 30px;
                 cursor: pointer;
             }
+            .arrow.arrowUp {
+                position: absolute;
+                top: 30px;
+                left: 75%;
+            }
+            .arrow.arrowDown {
+                position: absolute;
+                bottom: 70px;
+                left: 75%;
+                transform: rotate(180deg);
+            }
             .comment {
                 @extend %flex;
                 flex-wrap: nowrap;
+                justify-content: flex-end;
+                margin-bottom: 50px;
+                .customAvatar {
+                    height: 60px;
+                    margin-right: 50px;
+                    align-self: center;
+                }
                 .commentText {
                     border: 1px solid green;
+                    width: 70%;
+                    max-width: 650px;
+                    background-color: #fff;
+                    border-radius: 5px;
+                    padding: 20px;
+                    h5 {
+                        margin: 0;
+                    }
+                    p {
+                        margin: 0;
+                        color: $textColor;
+                        font-style: italic;
+                    }
                 }
             }
         }
      }
  }
+ section.team {
+     .wrapper {
+         @extend %wrapper;
+         text-align: center;
+         * {
+             margin: 0;
+         }
+         h2 {
+             font-size: $h2;
+             margin-bottom: 20px;
+         }
+         h5 {
+             font-size: $h5;
+             margin-bottom: 20px;
+         }
+         p {
+             display: inline-block;
+             color: $textColor;
+         }
+         p:first-of-type {
+             width: 560px;
+         }
+         p:last-of-type {
+             width: 650px;
+         }
+         .teamPeople {
+             @extend %flex;
+             justify-content: center;
+             align-items: center;
+             margin: 80px 0 30px 0;
+             .teamAvatar {
+                 margin-left: 25px;
+                 height: 100px;
+                 filter: blur(2px) grayscale(50%);
+             }
+             .teamAvatar.active {
+                 height: 160px;
+                 border: 25px solid #fff;
+                 border-radius: 50%;
+                 box-shadow: 0 0 5px 1px $textColor;
+                 filter: blur(0) grayscale(0);
+             }
+         }
+         .social {
+             margin: 0 auto;
+             padding: 0;
+             height: 20px;
+             width: 260px;
+             background-image: url('../../Dart/img/socialicon.png');
+             background-repeat: no-repeat;
+             background-position: center center;
+         }
+     }
+ }
+ 
