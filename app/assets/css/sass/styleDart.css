@@ -13,22 +13,22 @@ p {
   font-size: 15px;
   line-height: 24px; }
 
-section.hero .wraper header, section.hero .wraper header .logo, section.hero .wraper header ul, section.hero .wraper .elements, section.easy .wraper .tool, section.easy .wraper .tool .toolItem, section.count, section.count .countBlock, section.service .wraper, section.service .wraper .dropMenuBlock .groupUp, section.service .wraper .dropMenuBlock .groupDown, section.testimonails .wrapper, section.testimonails .wrapper .feedBack, section.testimonails .wrapper .feedBack .comment, section.team .wrapper .teamPeople, section.contact .wrapper .sub-form, section.contact .wrapper .sub-form .field-radio {
+section.hero .wraper header, section.hero .wraper header .logo, section.hero .wraper header ul, section.hero .wraper .elements, section.easy .wraper .tool, section.easy .wraper .tool .toolItem, section.count, section.count .countBlock, section.service .wraper, section.service .wraper .dropMenuBlock .groupUp, section.service .wraper .dropMenuBlock .groupDown, section.testimonails .wrapper, section.testimonails .wrapper .feedBack, section.testimonails .wrapper .feedBack .comment, section.team .wrapper .teamPeople, section.contact .wrapper .sub-form, section.contact .wrapper .sub-form .field-radio, footer.footer .wrapper, footer.footer .wrapper .logo-menu, footer.footer .wrapper .logo-menu .logo, footer.footer .wrapper .logo-menu ul, footer.footer .wrapper .link-social, footer.footer .wrapper .link-social ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap; }
 
-section.hero .wraper header ul {
+section.hero .wraper header ul, footer.footer .wrapper .logo-menu ul, footer.footer .wrapper .link-social ul {
   list-style: none;
   margin: 0;
   padding: 0; }
 
-section.hero .wraper header ul li a, section.hero .wraper header .navBut {
+section.hero .wraper header ul li a, section.hero .wraper header .navBut, footer.footer .wrapper .logo-menu ul li a {
   text-decoration: none; }
 
-section.hero .wraper, section.easy .wraper, section.service .wraper, section.testimonails .wrapper, section.team .wrapper, section.contact .wrapper {
+section.hero .wraper, section.easy .wraper, section.service .wraper, section.testimonails .wrapper, section.team .wrapper, section.contact .wrapper, footer.footer .wrapper {
   max-width: 1440px;
   width: 80%;
   position: relative;
@@ -45,13 +45,13 @@ section.hero .wraper .elements .text button, section.easy .wraper button, sectio
   -webkit-box-shadow: 0px 5px 1rem #000;
           box-shadow: 0px 5px 1rem #000; }
 
-section.team .wrapper .socialNail0, section.team .wrapper .socialNail1, section.team .wrapper .socialNail2, section.team .wrapper .socialNail3, section.team .wrapper .socialNail4 {
+section.team .wrapper .socialNail0, section.team .wrapper .socialNail1, section.team .wrapper .socialNail2, section.team .wrapper .socialNail3, section.team .wrapper .socialNail4, footer.footer .wrapper .link-social .socialNail0, footer.footer .wrapper .link-social .socialNail1, footer.footer .wrapper .link-social .socialNail2, footer.footer .wrapper .link-social .socialNail3, footer.footer .wrapper .link-social .socialNail4 {
   margin: 30px auto 90px auto;
   padding: 0;
   height: 20px;
   width: 35px;
   display: inline-block;
-  background-image: url("c");
+  background-image: url("../../Dart/img/socialicon.png");
   background-repeat: no-repeat; }
 
 section.hero {
@@ -72,13 +72,17 @@ section.hero {
               align-items: center;
       margin: 50px auto; }
       section.hero .wraper header .logo {
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
         max-height: 30px; }
         section.hero .wraper header .logo p {
           display: inline-block;
           margin: 0;
           margin-left: 10px;
           text-transform: uppercase;
-          font-weight: 400; }
+          font-weight: 400;
+          line-height: 1rem; }
           section.hero .wraper header .logo p span {
             font-weight: 800; }
       section.hero .wraper header ul li {
@@ -414,3 +418,56 @@ section.contact {
         width: 130px;
         background-color: #1de9b6;
         color: #fff; }
+
+footer.footer {
+  background-color: #061e37;
+  color: #fff; }
+  footer.footer .wrapper {
+    padding: 100px 0; }
+    footer.footer .wrapper .logo-menu {
+      width: 100%;
+      -webkit-box-pack: justify;
+          -ms-flex-pack: justify;
+              justify-content: space-between;
+      margin-bottom: 50px; }
+      footer.footer .wrapper .logo-menu .logo {
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        max-height: 30px; }
+        footer.footer .wrapper .logo-menu .logo p {
+          display: inline-block;
+          margin: 0;
+          margin-left: 10px;
+          text-transform: uppercase;
+          font-weight: 400;
+          line-height: 1rem; }
+          footer.footer .wrapper .logo-menu .logo p span {
+            font-weight: 800; }
+      footer.footer .wrapper .logo-menu ul li {
+        margin-left: 50px; }
+        footer.footer .wrapper .logo-menu ul li a {
+          color: #fff; }
+    footer.footer .wrapper .link-social {
+      width: 100%;
+      -webkit-box-pack: justify;
+          -ms-flex-pack: justify;
+              justify-content: space-between; }
+      footer.footer .wrapper .link-social ul li {
+        margin-left: 10px;
+        color: #858a92; }
+      footer.footer .wrapper .link-social .socialNail0 {
+        background-position: 0px 0;
+        margin: 0; }
+      footer.footer .wrapper .link-social .socialNail1 {
+        background-position: -44px 0;
+        margin: 0; }
+      footer.footer .wrapper .link-social .socialNail2 {
+        background-position: -88px 0;
+        margin: 0; }
+      footer.footer .wrapper .link-social .socialNail3 {
+        background-position: -132px 0;
+        margin: 0; }
+      footer.footer .wrapper .link-social .socialNail4 {
+        background-position: -176px 0;
+        margin: 0; }
