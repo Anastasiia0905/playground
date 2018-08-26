@@ -7,38 +7,37 @@ html, body {
           box-sizing: border-box;
   height: 100%;
   max-height: 100%;
-  font-family: "Raleway", sans-serif; }
+  font-family: "Raleway", sans-serif;
+  width: 100vw; }
 
 p {
-  font-size: 15px;
   line-height: 24px; }
 
-section.hero .wraper header, section.hero .wraper header .logo, section.hero .wraper header ul, section.hero .wraper .elements, section.easy .wraper .tool, section.easy .wraper .tool .toolItem, section.count, section.count .countBlock, section.service .wraper, section.service .wraper .dropMenuBlock .groupUp, section.service .wraper .dropMenuBlock .groupDown, section.testimonails .wrapper, section.testimonails .wrapper .feedBack, section.testimonails .wrapper .feedBack .comment, section.team .wrapper .teamPeople, section.contact .wrapper .sub-form, section.contact .wrapper .sub-form .field-radio, footer.footer .wrapper, footer.footer .wrapper .logo-menu, footer.footer .wrapper .logo-menu .logo, footer.footer .wrapper .logo-menu ul, footer.footer .wrapper .link-social, footer.footer .wrapper .link-social ul {
+section.hero .wrapper .header, section.hero .wrapper .header .logo, section.hero .wrapper .header .main-menu, section.hero .wrapper .elements, section.easy .wraper .tool, section.easy .wraper .tool .toolItem, section.count, section.count .countBlock, section.service .wraper, section.service .wraper .dropMenuBlock .groupUp, section.service .wraper .dropMenuBlock .groupDown, section.testimonails .wrapper, section.testimonails .wrapper .feedBack, section.testimonails .wrapper .feedBack .comment, section.team .wrapper .teamPeople, section.contact .wrapper .sub-form, section.contact .wrapper .sub-form .field-radio, footer.footer .wrapper, footer.footer .wrapper .logo-menu, footer.footer .wrapper .logo-menu .logo, footer.footer .wrapper .logo-menu ul, footer.footer .wrapper .link-social, footer.footer .wrapper .link-social ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap; }
 
-section.hero .wraper header ul, footer.footer .wrapper .logo-menu ul, footer.footer .wrapper .link-social ul {
+section.hero .wrapper .header .main-menu, footer.footer .wrapper .logo-menu ul, footer.footer .wrapper .link-social ul {
   list-style: none;
   margin: 0;
   padding: 0; }
 
-section.hero .wraper header ul li a, section.hero .wraper header .navBut, footer.footer .wrapper .logo-menu ul li a {
+section.hero .wrapper .header .main-menu li a, footer.footer .wrapper .logo-menu ul li a {
   text-decoration: none; }
 
-section.hero .wraper, section.easy .wraper, section.service .wraper, section.testimonails .wrapper, section.team .wrapper, section.contact .wrapper, footer.footer .wrapper {
+section.hero .wrapper, section.easy .wraper, section.service .wraper, section.testimonails .wrapper, section.team .wrapper, section.contact .wrapper, footer.footer .wrapper {
   max-width: 1440px;
   width: 80%;
   position: relative;
   margin: 0 auto; }
 
-section.hero .wraper .elements .text button, section.easy .wraper button, section.testimonails .wrapper .textTitile button, section.contact .wrapper .sub-form button {
+section.hero .wrapper .elements .text .elements-button, section.easy .wraper button, section.testimonails .wrapper .textTitile button, section.contact .wrapper .sub-form button {
   height: 55px;
-  width: 160px;
+  width: 35%;
   font-family: "Roboto", sans-serif;
-  font-size: 15px;
   text-transform: uppercase;
   border-radius: 5px;
   border: none;
@@ -54,80 +53,113 @@ section.team .wrapper .socialNail0, section.team .wrapper .socialNail1, section.
   background-image: url("../../Dart/img/socialicon.png");
   background-repeat: no-repeat; }
 
+html {
+  font-size: 10px; }
+
 section.hero {
   background: url("../../Dart/img/header.png") center center no-repeat;
   background-size: cover;
   color: #fff;
   position: relative;
-  border: 1px solid transparent; }
-  section.hero .wraper {
-    height: 80vh;
+  border: 1px solid #17e0c2; }
+  section.hero .wrapper {
+    height: 100vh;
     overflow: hidden; }
-    section.hero .wraper header {
+    section.hero .wrapper .header {
       -webkit-box-pack: justify;
           -ms-flex-pack: justify;
               justify-content: space-between;
       -webkit-box-align: center;
           -ms-flex-align: center;
               align-items: center;
-      margin: 50px auto; }
-      section.hero .wraper header .logo {
+      margin: 50px auto;
+      position: relative;
+      /*BURGER*/
+      /*END BURGER*/ }
+      section.hero .wrapper .header .logo {
         -webkit-box-align: center;
             -ms-flex-align: center;
                 align-items: center;
         max-height: 30px; }
-        section.hero .wraper header .logo p {
+        section.hero .wrapper .header .logo p {
           display: inline-block;
           margin: 0;
           margin-left: 10px;
           text-transform: uppercase;
           font-weight: 400;
           line-height: 1rem; }
-          section.hero .wraper header .logo p span {
+          section.hero .wrapper .header .logo p span {
             font-weight: 800; }
-      section.hero .wraper header ul li {
+      section.hero .wrapper .header .nav-toggle {
+        margin-left: auto;
+        padding: 2px;
+        cursor: pointer;
+        height: 3rem;
+        width: 4rem;
+        z-index: 2; }
+      section.hero .wrapper .header .nav-toggle:hover {
+        opacity: 0.8; }
+      section.hero .wrapper .header .nav-toggle:hover .nav-toggle-bar::before {
+        margin-top: -1.2rem; }
+      section.hero .wrapper .header .nav-toggle:hover .nav-toggle-bar::after {
+        margin-top: 1.2rem; }
+      section.hero .wrapper .header .nav-toggle .nav-toggle-bar, section.hero .wrapper .header .nav-toggle .nav-toggle-bar::before,
+      section.hero .wrapper .header .nav-toggle .nav-toggle-bar::after {
+        position: absolute;
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+                transform: translateY(-50%);
+        background-color: #fff;
+        content: '';
+        height: 0.2rem;
+        width: 40px;
+        -webkit-transition: all 0.5s ease;
+        transition: all 0.5s ease; }
+      section.hero .wrapper .header .nav-toggle .nav-toggle-bar {
+        margin-top: 0; }
+      section.hero .wrapper .header .nav-toggle .nav-toggle-bar::before {
+        margin-top: -1rem; }
+      section.hero .wrapper .header .nav-toggle .nav-toggle-bar::after {
+        margin-top: 1rem; }
+      section.hero .wrapper .header .main-menu, section.hero .wrapper .header .nav-button {
+        display: none; }
+      section.hero .wrapper .header .main-menu li {
         margin-left: 50px; }
-        section.hero .wraper header ul li a {
+        section.hero .wrapper .header .main-menu li a {
           color: #fff; }
-      section.hero .wraper header .navBut {
-        font-size: 12px;
-        border: 1px solid #fff;
-        color: #fff;
-        padding: 10px 20px;
-        border-radius: 5px; }
-    section.hero .wraper .elements {
+    section.hero .wrapper .elements {
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
       position: absolute;
       top: 50%;
-      -webkit-transform: translateY(-50%);
-              transform: translateY(-50%);
-      -ms-flex-wrap: nowrap;
-          flex-wrap: nowrap;
+      -webkit-transform: translateY(-30%);
+              transform: translateY(-30%);
       -webkit-box-pack: justify;
           -ms-flex-pack: justify;
               justify-content: space-between; }
-      section.hero .wraper .elements .text {
+      section.hero .wrapper .elements .text {
         padding: 0;
         margin: 0;
-        max-width: 45%; }
-        section.hero .wraper .elements .text h1 {
-          font-size: calc(15px * 3.6);
+        max-width: 100%; }
+        section.hero .wrapper .elements .text h1 {
+          font-size: 3.6rem;
           text-transform: uppercase; }
-        section.hero .wraper .elements .text h5 {
-          font-size: calc(15px * 1.2);
+        section.hero .wrapper .elements .text h5 {
+          font-size: 1.2rem;
           font-weight: 400;
           line-height: 24px; }
-        section.hero .wraper .elements .text button:first-of-type {
+        section.hero .wrapper .elements .text .elements-button {
+          width: 55%;
+          margin: 50px auto;
+          display: block; }
+        section.hero .wrapper .elements .text .elements-button:first-of-type {
           background: #061e37;
-          color: #fff;
-          margin-right: 30px; }
-        section.hero .wraper .elements .text button:last-of-type {
+          color: #fff; }
+        section.hero .wrapper .elements .text .elements-button:last-of-type {
           background: #fff;
           color: #061e37; }
-      section.hero .wraper .elements .video {
-        -ms-flex-item-align: center;
-            align-self: center;
-        max-height: 320px;
-        max-width: 45%; }
+      section.hero .wrapper .elements .video {
+        display: none; }
 
 section.easy {
   position: relative; }
@@ -141,10 +173,10 @@ section.easy {
       margin: 100px auto;
       text-align: center; }
       section.easy .wraper .title h2 {
-        font-size: calc(15px * 3);
+        font-size: 3rem;
         color: #061e37; }
       section.easy .wraper .title h3 {
-        font-size: calc(15px * 1.6);
+        font-size: 1.6rem;
         color: #d1d9dd; }
     section.easy .wraper .tool {
       -ms-flex-wrap: nowrap;
@@ -166,7 +198,7 @@ section.easy {
         text-align: center;
         width: 25%; }
         section.easy .wraper .tool .toolItem h4 {
-          font-size: calc(15px * 1.3);
+          font-size: 1.3rem;
           color: #061e37; }
     section.easy .wraper button {
       background-color: #1de9b6;
@@ -213,7 +245,7 @@ section.service {
       margin: 100px auto;
       margin-bottom: 50px; }
       section.service .wraper .textService h2 {
-        font-size: calc(15px * 3); }
+        font-size: 3rem; }
       section.service .wraper .textService p {
         color: #d1d9dd; }
     section.service .wraper .dropMenu {
@@ -261,7 +293,7 @@ section.testimonails {
     section.testimonails .wrapper .textTitile {
       color: #fff; }
       section.testimonails .wrapper .textTitile h2 {
-        font-size: calc(15px * 3); }
+        font-size: 3rem; }
       section.testimonails .wrapper .textTitile button {
         color: #fff;
         background-color: #061e37;
@@ -316,11 +348,11 @@ section.team .wrapper {
   section.team .wrapper * {
     margin: 0; }
   section.team .wrapper h2 {
-    font-size: calc(15px * 3);
+    font-size: 3rem;
     margin-bottom: 20px;
     color: #061e37; }
   section.team .wrapper h5 {
-    font-size: calc(15px * 1.2);
+    font-size: 1.2rem;
     margin-bottom: 20px; }
   section.team .wrapper p {
     display: inline-block;
@@ -369,9 +401,7 @@ section.contact {
     padding: 45px 0 90px 0;
     color: #061e37; }
     section.contact .wrapper h2 {
-      font-size: calc(15px * 3); }
-    section.contact .wrapper p {
-      font-size: 15px; }
+      font-size: 3rem; }
     section.contact .wrapper .sub-form {
       -webkit-box-pack: justify;
           -ms-flex-pack: justify;
@@ -397,8 +427,8 @@ section.contact {
         -webkit-box-align: center;
             -ms-flex-align: center;
                 align-items: center; }
-        section.contact .wrapper .sub-form .field-radio input[type=radio] {
-          opacity: 0.3;
+        section.contact .wrapper .sub-form .field-radio input[type=checkbox] {
+          opacity: 0;
           width: 10px;
           height: 10px;
           margin-right: 15px;
@@ -414,6 +444,9 @@ section.contact {
           left: 0;
           background: url("../../Dart/img/unchecked.png") center center;
           background-size: cover; }
+      section.contact .wrapper .sub-form .field-radio input:checked ~ .check {
+        background: url("../../Dart/img/checked.png") center center no-repeat;
+        background-size: 25px; }
       section.contact .wrapper .sub-form button {
         width: 130px;
         background-color: #1de9b6;
@@ -471,3 +504,40 @@ footer.footer {
       footer.footer .wrapper .link-social .socialNail4 {
         background-position: -176px 0;
         margin: 0; }
+
+@media screen and (min-width: 750px) {
+  html {
+    font-size: 15px; }
+  section.hero .wrapper {
+    height: 80vh; }
+    section.hero .wrapper .header .nav-toggle {
+      display: none; }
+    section.hero .wrapper .header .main-menu {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex; }
+    section.hero .wrapper .header .nav-button {
+      display: block;
+      font-size: 12px;
+      border: 1px solid #fff;
+      color: #fff;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 5px; }
+    section.hero .wrapper .elements {
+      -ms-flex-wrap: nowrap;
+          flex-wrap: nowrap;
+      -webkit-transform: translateY(-50%);
+              transform: translateY(-50%); }
+      section.hero .wrapper .elements .text {
+        width: 45%; }
+        section.hero .wrapper .elements .text .elements-button {
+          width: 35%;
+          margin-right: 30px;
+          display: inline; }
+      section.hero .wrapper .elements .video {
+        display: block;
+        width: 45%;
+        -ms-flex-item-align: center;
+            align-self: center;
+        max-height: 320px; } }

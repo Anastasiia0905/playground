@@ -1,19 +1,23 @@
 @import 'setting2';
+html {
+    font-size: 10px;
+}
  section.hero {
-     background: url("../../Dart/img/header.png") center center no-repeat;
+    background: url("../../Dart/img/header.png") center center no-repeat;
      background-size: cover;
      color: $colorTop;
      position: relative;
-     border: 1px solid transparent;
-     .wraper {
+     border: 1px solid #17e0c2;
+     .wrapper {
          @extend %wrapper;
-         height: 80vh;
+         height: 100vh;
          overflow: hidden;
-         header {
+         .header {
              @extend %flex;
              justify-content: space-between;
              align-items: center;
              margin: 50px auto;
+             position: relative;
              .logo{
                  @extend %flex;
                  align-items: center;
@@ -30,7 +34,50 @@
                      }
                  }
              }
-             & ul {
+             /*BURGER*/
+             .nav-toggle {
+                margin-left: auto;
+                padding: 2px;
+                cursor: pointer;
+                height: 3rem;
+                width: 4rem;
+                z-index: 2;
+            } 
+            .nav-toggle:hover {
+                opacity: 0.8;
+                
+            }
+            .nav-toggle:hover .nav-toggle-bar::before {
+                margin-top: -1.2rem;
+            }
+            .nav-toggle:hover .nav-toggle-bar::after {
+                margin-top: 1.2rem;
+            }
+            .nav-toggle .nav-toggle-bar, .nav-toggle .nav-toggle-bar::before,
+            .nav-toggle .nav-toggle-bar::after {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                background-color: #fff;
+                content: '';
+                height: 0.2rem;
+                width: 40px;
+                transition: all 0.5s ease;
+            }
+            .nav-toggle .nav-toggle-bar {
+                margin-top: 0;
+            }
+            .nav-toggle .nav-toggle-bar::before {
+                margin-top: -1rem;
+            }
+            .nav-toggle .nav-toggle-bar::after {
+                margin-top: 1rem;
+            }
+            /*END BURGER*/
+            .main-menu, .nav-button {
+                display: none;
+            }
+             & .main-menu {
                  @extend %ul, %flex;
                  li {
                      margin-left: 50px;
@@ -40,26 +87,18 @@
                      }
                  } 
              }
-             .navBut {
-                 @extend %a;
-                 font-size: 12px;
-                 border: 1px solid $colorTop;
-                 color: $colorTop;
-                 padding: 10px 20px;
-                 border-radius: 5px;
-             }
          }
          .elements {
              @extend %flex; 
+             flex-wrap: wrap;
              position: absolute;
              top: 50%;
-             transform: translateY(-50%);
-             flex-wrap: nowrap;
+             transform: translateY(-30%);
              justify-content: space-between;
              .text{
                  padding: 0;
                  margin: 0;
-                 max-width: 45%;
+                 max-width: 100%;
                 h1{
                     font-size: $h1;
                     text-transform: uppercase;
@@ -69,23 +108,23 @@
                     font-weight: 400;
                     line-height: 24px;
                 }
-                button {
+                .elements-button {
                     @extend %button;
+                    width: 55%;
+                    margin: 50px auto;
+                    display: block;
                 }
-                button:first-of-type{
+                .elements-button:first-of-type{
                     background: #061e37;
                     color: #fff;
-                    margin-right: 30px;
                 }
-                button:last-of-type{
+                .elements-button:last-of-type{
                     background: #fff;
                     color:  #061e37;
                 }
              }
              .video {
-                 align-self: center;
-                max-height: 320px;
-                max-width: 45%;
+                display: none;
              }
          }
      }
@@ -359,9 +398,6 @@
          h2{
              font-size: $h2;
          }
-         p{
-             font-size: $fontNormal;
-         }
          .sub-form {
              @extend %flex;
              justify-content: space-between;
@@ -389,8 +425,8 @@
                  @extend %flex;
                  position: relative;
                  align-items: center;
-                 input[type=radio]{
-                    opacity: 0.3;
+                 input[type=checkbox]{
+                    opacity: 0;
                     width: 10px;
                     height: 10px;
                     margin-right: 15px;
@@ -408,7 +444,10 @@
                     background-size: cover;
                 }
              }
-
+             .field-radio input:checked ~ .check {
+                background: url('../../Dart/img/checked.png') center center no-repeat;
+                background-size: 25px;
+             }
             button {
                 @extend %button;
                 width: 130px;
@@ -477,5 +516,50 @@
                 }
             }
         } 
+     }
+ }
+ @media screen and (min-width: 750px){
+     html {
+         font-size: 15px;   
+     }
+     section.hero {
+         .wrapper {
+             height: 80vh;
+             .header {
+                 .nav-toggle {
+                     display: none;
+                 }
+                 .main-menu {
+                     display: flex;
+                 }
+                 .nav-button {
+                    display: block;
+                    font-size: 12px;
+                    border: 1px solid $colorTop;
+                    color: $colorTop;
+                    padding: 10px 20px;
+                    text-decoration: none;
+                    border-radius: 5px;
+                 }
+             }
+             .elements {
+                 flex-wrap: nowrap;
+                 transform: translateY(-50%);
+                 .text {
+                    width: 45%;
+                    .elements-button {
+                        width: 35%;
+                       margin-right: 30px;
+                       display: inline;
+                    }
+                 }
+                 .video {
+                    display: block;
+                    width: 45%;
+                    align-self: center;
+                    max-height: 320px;
+                 }
+             }
+         }
      }
  }

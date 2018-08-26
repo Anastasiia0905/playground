@@ -10,15 +10,18 @@
 </head>
 <body>
     <section class="hero">
-        <div class="wraper">
-            <header>
+        <div class="wrapper">
+            <header class="header">
                 <div class="logo">
                     <img src="img/logo.png" alt="logo">
                     <p>dart<br>
                     <span>service manager</span></p>
                 </div>
+                <div class="nav-toggle">
+                    <div class="nav-toggle-bar"></div>
+                </div>
                 <nav>
-                    <ul>
+                    <ul class="main-menu">
                         <li><a href="#">Home</a></li>
                         <li><a href="#">Service</a></li>
                         <li><a href="#">Extension</a></li>
@@ -26,16 +29,19 @@
                         <li><a href="#">Help</a></li>
                     </ul>
                 </nav>
-              <a href="#" class="navBut">sing up</a>
+              <a href="#" class="nav-button">sing up</a>
             </header>
             <div class="elements">
                 <div class="text">
                     <h1>Lorem ipsum dolor sit amet</h1>
                     <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto rem eius ullam quae, exercitationem mollitia.</h5>
                     <div class="buttonGroup">
-                        <button>buy now</button>
-                        <button>try for free</button>
+                        <button class="elements-button">buy now</button>
+                        <button class="elements-button">try for free</button>
                     </div>
+                </div>
+                <div class="video-replace">
+
                 </div>
                 <img class="video" src="img/video.png" alt="video">
             </div>
@@ -251,7 +257,7 @@
                 <div class="field-wrap"><label for="email">Email</label><input id="Email" type="email"></div>
                 <div class="field-wrap"><label for="phone">Phone</label><input id="phone" type="tel"></div>
                 <div class="field-wrap area"><label for="message">Message</label><textarea name="message" id="message" cols="30" rows="10"></textarea></div>
-                <div class="field-radio"><input id="subscribe" type="radio"><span class="check"></span><label class="radio-label" for="subscribe">subscribe to the newsletter</label></div>
+                <div class="field-radio"><input id="subscribe" type="checkbox"><span class="check"></span><label class="radio-label" for="subscribe">subscribe to the newsletter</label></div>
                 <button>send</button>
             </form>
         </div>
