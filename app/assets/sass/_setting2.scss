@@ -13,7 +13,7 @@ $colorTop: #fff;
 $titleColor: #061e37; 
 $textColor: #d1d9dd;
 
-$maxW: 1440px;
+//$maxW: 1440px;
 html, body {
     margin: 0;
     padding: 0;
@@ -22,6 +22,7 @@ html, body {
     max-height: 100%;
     font-family: $Raleway;
     width: 100vw;
+    overflow-x: hidden;
 }
 
 p {
@@ -41,7 +42,7 @@ p {
     text-decoration: none;
 }
 %wrapper {
-    max-width: $maxW;
+    //max-width: $maxW;
     width: 80%;
     position: relative;
     margin: 0 auto;

@@ -8,12 +8,13 @@ html, body {
   height: 100%;
   max-height: 100%;
   font-family: "Raleway", sans-serif;
-  width: 100vw; }
+  width: 100vw;
+  overflow-x: hidden; }
 
 p {
   line-height: 24px; }
 
-section.hero .wrapper .header, section.hero .wrapper .header .logo, section.hero .wrapper .header .main-menu, section.hero .wrapper .elements, section.easy .wraper .tool, section.easy .wraper .tool .toolItem, section.count, section.count .countBlock, section.service .wraper, section.service .wraper .dropMenuBlock .groupUp, section.service .wraper .dropMenuBlock .groupDown, section.testimonails .wrapper, section.testimonails .wrapper .feedBack, section.testimonails .wrapper .feedBack .comment, section.team .wrapper .teamPeople, section.contact .wrapper .sub-form, section.contact .wrapper .sub-form .field-radio, footer.footer .wrapper, footer.footer .wrapper .logo-menu, footer.footer .wrapper .logo-menu .logo, footer.footer .wrapper .logo-menu ul, footer.footer .wrapper .link-social, footer.footer .wrapper .link-social ul {
+section.hero .wrapper .header, section.hero .wrapper .header .logo, section.hero .wrapper .header .main-menu, section.hero .wrapper .elements, section.easy .wrapper .tool, section.easy .wrapper .tool .toolItem, section.count, section.count .countBlock, section.service .wrapper, section.service .wrapper .dropMenuBlock .groupUp, section.service .wrapper .dropMenuBlock .groupDown, section.testimonails .wrapper, section.testimonails .wrapper .feedBack, section.testimonails .wrapper .feedBack .comment, section.team .wrapper .teamPeople, section.contact .wrapper .sub-form, section.contact .wrapper .sub-form .field-radio, footer.footer .wrapper, footer.footer .wrapper .logo-menu, footer.footer .wrapper .logo-menu .logo, footer.footer .wrapper .logo-menu ul, footer.footer .wrapper .link-social, footer.footer .wrapper .link-social ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -28,13 +29,12 @@ section.hero .wrapper .header .main-menu, footer.footer .wrapper .logo-menu ul, 
 section.hero .wrapper .header .main-menu li a, footer.footer .wrapper .logo-menu ul li a {
   text-decoration: none; }
 
-section.hero .wrapper, section.easy .wraper, section.service .wraper, section.testimonails .wrapper, section.team .wrapper, section.contact .wrapper, footer.footer .wrapper {
-  max-width: 1440px;
+section.hero .wrapper, section.easy .wrapper, section.service .wrapper, section.testimonails .wrapper, section.team .wrapper, section.contact .wrapper, footer.footer .wrapper {
   width: 80%;
   position: relative;
   margin: 0 auto; }
 
-section.hero .wrapper .elements .text .elements-button, section.easy .wraper button, section.testimonails .wrapper .textTitile button, section.contact .wrapper .sub-form button {
+section.hero .wrapper .elements .text .elements-button, section.easy .wrapper .tool-button, section.testimonails .wrapper .textTitile .testimonails-button, section.contact .wrapper .sub-form button {
   height: 55px;
   width: 35%;
   font-family: "Roboto", sans-serif;
@@ -63,8 +63,9 @@ section.hero {
   position: relative;
   border: 1px solid #17e0c2; }
   section.hero .wrapper {
-    height: 100vh;
-    overflow: hidden; }
+    position: relative;
+    overflow: hidden;
+    min-height: 80vh; }
     section.hero .wrapper .header {
       -webkit-box-pack: justify;
           -ms-flex-pack: justify;
@@ -72,7 +73,7 @@ section.hero {
       -webkit-box-align: center;
           -ms-flex-align: center;
               align-items: center;
-      margin: 50px auto;
+      margin: 25px auto;
       position: relative;
       /*BURGER*/
       /*END BURGER*/ }
@@ -123,24 +124,25 @@ section.hero {
         margin-top: 1rem; }
       section.hero .wrapper .header .main-menu, section.hero .wrapper .header .nav-button {
         display: none; }
+      section.hero .wrapper .header .nav-button {
+        text-decoration: none;
+        color: #fff;
+        border: 1px solid #fff;
+        border-radius: 5px;
+        padding: 7px 20px; }
       section.hero .wrapper .header .main-menu li {
         margin-left: 50px; }
         section.hero .wrapper .header .main-menu li a {
           color: #fff; }
     section.hero .wrapper .elements {
-      -ms-flex-wrap: wrap;
-          flex-wrap: wrap;
-      position: absolute;
-      top: 50%;
-      -webkit-transform: translateY(-30%);
-              transform: translateY(-30%);
-      -webkit-box-pack: justify;
-          -ms-flex-pack: justify;
-              justify-content: space-between; }
+      -ms-flex-wrap: nowrap;
+          flex-wrap: nowrap;
+      margin: 1.8rem auto;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center; }
       section.hero .wrapper .elements .text {
-        padding: 0;
-        margin: 0;
-        max-width: 100%; }
+        width: 100%; }
         section.hero .wrapper .elements .text h1 {
           font-size: 3.6rem;
           text-transform: uppercase; }
@@ -150,7 +152,7 @@ section.hero {
           line-height: 24px; }
         section.hero .wrapper .elements .text .elements-button {
           width: 55%;
-          margin: 50px auto;
+          margin: 30px auto;
           display: block; }
         section.hero .wrapper .elements .text .elements-button:first-of-type {
           background: #061e37;
@@ -159,33 +161,37 @@ section.hero {
           background: #fff;
           color: #061e37; }
       section.hero .wrapper .elements .video {
+        width: 48.5%;
+        height: 100%;
         display: none; }
 
 section.easy {
   position: relative; }
-  section.easy .wraper {
-    margin-bottom: 100px;
-    color: #d1d9dd;
-    height: 100vh;
-    max-height: 800px; }
-    section.easy .wraper .title {
+  section.easy .wrapper {
+    margin-bottom: 50px;
+    color: #d1d9dd; }
+    section.easy .wrapper .title {
       max-width: 580px;
       margin: 100px auto;
       text-align: center; }
-      section.easy .wraper .title h2 {
+      section.easy .wrapper .title h2 {
         font-size: 3rem;
         color: #061e37; }
-      section.easy .wraper .title h3 {
+      section.easy .wrapper .title h3 {
         font-size: 1.6rem;
         color: #d1d9dd; }
-    section.easy .wraper .tool {
+    section.easy .wrapper .tool {
       -ms-flex-wrap: nowrap;
           flex-wrap: nowrap;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column;
       -webkit-box-pack: justify;
           -ms-flex-pack: justify;
               justify-content: space-between;
-      margin: 80px auto; }
-      section.easy .wraper .tool .toolItem {
+      margin: 80px auto 0; }
+      section.easy .wrapper .tool .toolItem {
         -ms-flex-wrap: nowrap;
             flex-wrap: nowrap;
         -webkit-box-orient: vertical;
@@ -196,11 +202,11 @@ section.easy {
             -ms-flex-align: center;
                 align-items: center;
         text-align: center;
-        width: 25%; }
-        section.easy .wraper .tool .toolItem h4 {
+        margin-bottom: 50px; }
+        section.easy .wrapper .tool .toolItem h4 {
           font-size: 1.3rem;
           color: #061e37; }
-    section.easy .wraper button {
+    section.easy .wrapper .tool-button {
       background-color: #1de9b6;
       color: #fff;
       display: block;
@@ -234,87 +240,85 @@ section.count {
 
 section.service {
   position: relative; }
-  section.service .wraper {
+  section.service .wrapper {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column; }
-    section.service .wraper .textService {
+    section.service .wrapper .textService {
       text-align: center;
       max-width: 580px;
       margin: 100px auto;
       margin-bottom: 50px; }
-      section.service .wraper .textService h2 {
+      section.service .wrapper .textService h2 {
         font-size: 3rem; }
-      section.service .wraper .textService p {
+      section.service .wrapper .textService p {
         color: #d1d9dd; }
-    section.service .wraper .dropMenu {
-      width: calc(100% - 36%);
+    section.service .wrapper .dropMenu {
       max-width: 800px;
       margin: 0 auto; }
-    section.service .wraper .dropMenuBlock {
+    section.service .wrapper .dropMenuBlock {
       margin-bottom: 20px;
       padding: 20px 25px;
       -webkit-box-shadow: 1px 7px 10px rgba(0, 0, 0, 0.3);
               box-shadow: 1px 7px 10px rgba(0, 0, 0, 0.3);
       border-radius: 5px; }
-      section.service .wraper .dropMenuBlock .groupUp {
+      section.service .wrapper .dropMenuBlock .groupUp {
         -webkit-box-align: center;
             -ms-flex-align: center;
                 align-items: center; }
-        section.service .wraper .dropMenuBlock .groupUp p {
+        section.service .wrapper .dropMenuBlock .groupUp p {
           text-transform: uppercase;
           font-weight: bold; }
-        section.service .wraper .dropMenuBlock .groupUp .icon {
+        section.service .wrapper .dropMenuBlock .groupUp .icon {
           margin-right: 25px; }
-        section.service .wraper .dropMenuBlock .groupUp .arrow {
+        section.service .wrapper .dropMenuBlock .groupUp .arrow {
           margin-left: auto; }
-      section.service .wraper .dropMenuBlock .groupDown {
-        -ms-flex-wrap: nowrap;
-            flex-wrap: nowrap; }
-        section.service .wraper .dropMenuBlock .groupDown img {
-          width: 33%;
-          max-height: 155px;
-          margin-right: 30px; }
+      section.service .wrapper .dropMenuBlock .groupDown .service-img {
+        margin: 0 auto;
+        width: 100%;
+        max-height: 155px; }
 
 section.testimonails {
   position: relative;
   background: url("../../Dart/img/testimonailsBG.png") center center no-repeat;
   background-size: cover;
-  max-height: 565px;
   margin: 100px auto; }
   section.testimonails .wrapper {
-    -ms-flex-wrap: nowrap;
-        flex-wrap: nowrap;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
     padding: 30px 0; }
     section.testimonails .wrapper .textTitile {
+      position: relative;
       color: #fff; }
       section.testimonails .wrapper .textTitile h2 {
         font-size: 3rem; }
-      section.testimonails .wrapper .textTitile button {
+      section.testimonails .wrapper .textTitile .testimonails-button {
         color: #fff;
+        width: 160px;
         background-color: #061e37;
-        margin-top: 80px; }
+        margin: 10px auto;
+        display: block;
+        -ms-flex-item-align: center;
+            align-self: center; }
     section.testimonails .wrapper .feedBack {
       -webkit-box-pack: end;
           -ms-flex-pack: end;
               justify-content: flex-end;
-      margin: 95px auto; }
+      position: relative;
+      margin: 60px auto; }
       section.testimonails .wrapper .feedBack .arrow {
         color: #fff;
         font-size: 30px;
-        cursor: pointer; }
+        cursor: pointer;
+        position: absolute;
+        right: 48%;
+        -webkit-transform: translateY(-50%);
+                transform: translateY(-50%); }
       section.testimonails .wrapper .feedBack .arrow.arrowUp {
-        position: absolute;
-        top: 30px;
-        left: 75%; }
+        top: -30px; }
       section.testimonails .wrapper .feedBack .arrow.arrowDown {
-        position: absolute;
-        bottom: 70px;
-        left: 75%;
+        bottom: -30px;
         -webkit-transform: rotate(180deg);
                 transform: rotate(180deg); }
       section.testimonails .wrapper .feedBack .comment {
@@ -325,13 +329,10 @@ section.testimonails {
                 justify-content: flex-end;
         margin-bottom: 50px; }
         section.testimonails .wrapper .feedBack .comment .customAvatar {
-          height: 60px;
-          margin-right: 50px;
-          -ms-flex-item-align: center;
-              align-self: center; }
+          display: none; }
         section.testimonails .wrapper .feedBack .comment .commentText {
           border: 1px solid green;
-          width: 70%;
+          width: 100%;
           max-width: 650px;
           background-color: #fff;
           border-radius: 5px;
@@ -505,39 +506,61 @@ footer.footer {
         background-position: -176px 0;
         margin: 0; }
 
-@media screen and (min-width: 750px) {
+@media screen and (min-width: 481px) and (max-width: 766px) {
+  body {
+    background: violet; } }
+
+@media screen and (min-width: 767px) {
+  body {
+    background-color: black; }
+  section.hero .wrapper {
+    width: 66%; }
+    section.hero .wrapper .elements {
+      margin: 2.5rem auto; }
+      section.hero .wrapper .elements .text .buttonGroup {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        padding: 0;
+        -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+                justify-content: space-between; }
+        section.hero .wrapper .elements .text .buttonGroup .elements-button {
+          width: 35%;
+          margin: 0; } }
+
+@media screen and (min-width: 992px) {
+  body {
+    background: green; }
   html {
     font-size: 15px; }
   section.hero .wrapper {
-    height: 80vh; }
+    width: 80%; }
+    section.hero .wrapper .elements {
+      margin: 6rem auto;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center; }
+      section.hero .wrapper .elements .text {
+        width: 48.5%;
+        margin-right: 15%; }
+      section.hero .wrapper .elements .video {
+        display: block; } }
+
+@media screen and (min-width: 1025px) {
+  body {
+    background: yellow; }
+  section.hero .wrapper {
+    margin: 50px auto; }
     section.hero .wrapper .header .nav-toggle {
       display: none; }
-    section.hero .wrapper .header .main-menu {
+    section.hero .wrapper .header .main-menu, section.hero .wrapper .header .nav-button {
       display: -webkit-box;
       display: -ms-flexbox;
-      display: flex; }
-    section.hero .wrapper .header .nav-button {
-      display: block;
-      font-size: 12px;
-      border: 1px solid #fff;
-      color: #fff;
-      padding: 10px 20px;
-      text-decoration: none;
-      border-radius: 5px; }
-    section.hero .wrapper .elements {
-      -ms-flex-wrap: nowrap;
-          flex-wrap: nowrap;
-      -webkit-transform: translateY(-50%);
-              transform: translateY(-50%); }
-      section.hero .wrapper .elements .text {
-        width: 45%; }
-        section.hero .wrapper .elements .text .elements-button {
-          width: 35%;
-          margin-right: 30px;
-          display: inline; }
-      section.hero .wrapper .elements .video {
-        display: block;
-        width: 45%;
-        -ms-flex-item-align: center;
-            align-self: center;
-        max-height: 320px; } }
+      display: flex; } }
+
+@media screen and (min-width: 1919px) {
+  html {
+    font-size: 18px; }
+  section.hero .wrapper {
+    width: 60%; } }
