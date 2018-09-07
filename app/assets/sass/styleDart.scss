@@ -128,7 +128,6 @@ html {
                 }
              }
              .video {
-                 width: 48.5%;
                  height: 100%;
                  display: none;
              }
@@ -142,7 +141,6 @@ html {
         margin-bottom: 50px;
         color: $textColor;
         .title {
-            max-width: 580px;
             margin: 100px auto;
             text-align: center;
             h2 {
@@ -175,6 +173,7 @@ html {
         }
         .tool-button {
             @extend %button;
+            width: 55%;
             background-color: #1de9b6;
             color: #fff;
             display: block;
@@ -188,8 +187,9 @@ html {
      color: $colorTop;
      font-weight: bold;
      .countBlock{
-         flex: 1;
          @extend %flex;
+         flex: 1;
+         min-width: 50%;
          align-items: center;
          justify-content: center;
          height: 150px;
@@ -267,15 +267,16 @@ html {
      position: relative;
      background: url('../../Dart/img/testimonailsBG.png') center center no-repeat;
      background-size: cover;
-     margin: 100px auto;
+     margin: 100px auto 50px;
      .wrapper{
          @extend %wrapper;
          @extend %flex;
-         flex-wrap: wrap;
          padding: 30px 0;
-       .textTitile {
+       .textTitle {
             position: relative;
+            margin: 0 auto;
             color: $colorTop;
+            align-self: center;
             h2 {
                 font-size: $h2;
             }
@@ -341,132 +342,108 @@ html {
      .wrapper {
          @extend %wrapper;
          text-align: center;
-         * {
-             margin: 0;
-         }
+         margin: 0 auto;
          h2 {
              font-size: $h2;
              margin-bottom: 20px;
              color: $titleColor;
          }
-         h5 {
-             font-size: $h5;
-             margin-bottom: 20px;
-         }
-         p {
-             display: inline-block;
-             color: $textColor;
-         }
-         p:first-of-type {
-             width: 560px;
-         }
-         p:last-of-type {
-             width: 650px;
-         }
          .teamPeople {
              @extend %flex;
-             justify-content: center;
-             align-items: center;
-             margin: 80px 0 30px 0;
+             margin: 0 auto;
              .teamAvatar {
-                 margin-left: 25px;
-                 height: 100px;
-                 filter: blur(2px) grayscale(50%);
-             }
-             .teamAvatar.active {
-                 height: 160px;
-                 border: 25px solid #fff;
-                 border-radius: 50%;
-                 box-shadow: 0 0 5px 1px $textColor;
-                 filter: blur(0) grayscale(0);
+                 margin: 2em 0;
+                .avatarPhoto {
+                    width: 90%;
+                    max-width: 90vh;
+                }
              }
          }
          @for $i from 0 to 5 {
-             .socialNail#{$i}{
-                @extend %social;
-                 $length: -44px*$i;
-                 background-position: $length 0;
-             }
-         }
+            .socialNail#{$i}{
+               @extend %social;
+                $length: -44px*$i;
+                background-position: $length 0;
+            }
+        }
      }
  }
  section.contact {
      background: #fafafa;
      .wrapper {
-         @extend %wrapper;
-         width: 50%;
-         text-align: center;
-         padding: 45px 0 90px 0;
-         color: $titleColor;
-         h2{
-             font-size: $h2;
-         }
-         .sub-form {
-             @extend %flex;
-             justify-content: space-between;
-             margin: 50px;
-             .field-wrap {
-                 width: 45%;
-                 label {
-                     position: absolute;
-                     padding: 20px;
-                     font-size: 14px;
-                 }
-                 input, textarea{
-                     width: 100%;
-                     height: 50px;
-                     margin-bottom: 20px;
-                     border: 1px solid #000;
-                     border-radius: 5px;
-                     background-color: transparent;
-                 }
-             }
-             .field-wrap.area {
-                 width: 100%;
-             }
-             .field-radio {
-                 @extend %flex;
-                 position: relative;
-                 align-items: center;
-                 input[type=checkbox]{
-                    opacity: 0;
-                    width: 10px;
-                    height: 10px;
-                    margin-right: 15px;
-                    z-index: 10;
-                }
-                .check {
-                    display: inline-block;
+        @extend %wrapper;
+        padding: 10% 0;
+        text-align: center;
+        color: $titleColor;
+        h2 {
+            font-size: $h2;
+        }
+        .sub-form {
+            @extend %flex;
+            flex-direction: column;
+            justify-content: space-between;
+            .field-wrap {
+                width: 100%;
+                label {
                     position: absolute;
-                    width: 25px;
-                    height: 25px;
-                    top:50%;
-                    transform: translateY(-50%);
-                    left: 0;
-                    background: url('../../Dart/img/unchecked.png') center center;
-                    background-size: cover;
+                    padding: 20px;
+                    font-size: 14px;
                 }
-             }
-             .field-radio input:checked ~ .check {
-                background: url('../../Dart/img/checked.png') center center no-repeat;
-                background-size: 25px;
-             }
-            button {
+                input, textarea{
+                    width: 100%;
+                    height: 50px;
+                    margin-bottom: 20px;
+                    border: 1px solid #000;
+                    border-radius: 5px;
+                    background-color: transparent;
+                }
+            }
+            .field-radio {
+                @extend %flex;
+                position: relative;
+                align-items: center;
+                input[type=checkbox]{
+                   opacity: 0;
+                   width: 10px;
+                   height: 10px;
+                   margin-right: 15px;
+                   z-index: 10;
+               }
+               .check {
+                   display: inline-block;
+                   position: absolute;
+                   width: 25px;
+                   height: 25px;
+                   top:50%;
+                   transform: translateY(-50%);
+                   left: 0;
+                   background: url('../../Dart/img/unchecked.png') center center;
+                   background-size: cover;
+               }
+            }
+            .field-radio input:checked ~ .check {
+               background: url('../../Dart/img/checked.png') center center no-repeat;
+               background-size: 25px;
+            }
+        }
+        .contact-button {
                 @extend %button;
-                width: 130px;
+                display: block;
+                margin: 10% auto;
+                width: 55%;
                 background-color: #1de9b6;
                 color: #fff;
-            }
-         }
+        }
      }
- }
+ }  
+ 
  footer.footer {
      background-color: $titleColor;
      color: $colorTop;
      .wrapper {
          @extend %wrapper;
          @extend %flex;
-         padding: 100px 0;
+         padding: 10% 0;
          .logo-menu {
              @extend %flex;
              width: 100%;
@@ -482,7 +459,7 @@ html {
                    margin-left: 10px;
                    text-transform: uppercase;
                    font-weight: 400;
-                   line-height: 1rem;
+                   line-height: 2rem;
                     span{
                         font-weight: 800;
                     }
@@ -490,8 +467,10 @@ html {
             }
             ul {
                 @extend %ul, %flex;
+                flex-direction: column;
                 li {
                     margin-left: 50px;
+                    margin-bottom: 5px;
                     a {
                        @extend %a;
                        color: $colorTop;
@@ -505,10 +484,14 @@ html {
             justify-content: space-between;
             ul {
                 @extend %ul, %flex;
+                margin: 10% auto;
                 li {
-                    margin-left: 10px;
+                    margin-right: 10px;
                     color: #858a92;
                 }
+            }
+            .social {
+                margin: 10% auto;
             }
             @for $i from 0 to 5 {
                 .socialNail#{$i}{
@@ -517,27 +500,20 @@ html {
                     background-position: $length 0;
                     margin: 0;
                 }
-            }
+            } 
         } 
      }
  }
-
-
- @media screen and (min-width: 481px) and (max-width: 766px){
-    body {
-        background: violet;
-    }
-}
 @media screen and (min-width: 767px){
-     body {
-         background-color: black;
-     }
      section.hero {
          .wrapper {
-             width: 66%;
+             width: 80%;
              .elements {
-                 margin: 2.5rem auto;
+                 margin: 2rem auto;
+                 padding: 5%;
+                 flex-direction: column;
                  .text {
+                     margin: 10%;   
                     .buttonGroup {
                         display: flex;
                         padding: 0;
@@ -547,40 +523,135 @@ html {
                             margin: 0;
                         }
                     }
-                   
+                 }
+                 .video {
+                    display: block;
+                    margin: 0;
+                    padding: 0;
+                    width: 100%;
+                }
+             }
+         }
+     }
+     section.easy {
+         .wrapper {
+             width: 65%;
+         }
+     }
+     section.service {
+         .wrapper {
+             .dropMenu {
+                 .dropMenuBlock {
+                     .groupDown {
+                         justify-content: space-between;
+                        .service-img {
+                            max-width: 45%;
+                            height: 100%;
+                            margin: 0;
+                            align-self: center;
+                         }
+                         .txtDown {
+                             max-width: 45%;
+                         }
+                     }
+                 }
+             }
+         }
+     }
+     section.testimonails {
+         .wrapper {
+             .feedBack {
+                 .comment {
+                     .customAvatar {
+                         align-self: center;
+                         display: block;
+                         width: 70px;
+                         height: 70px;
+                         margin: 0 auto;    
+                     }
+                 }
+             }
+         }
+     }
+     section.team {
+         .wrapper {
+            .teamPeople {
+                justify-content: center;
+                position: relative;
+                height: 40vh;
+                .teamAvatar {
+                    align-self: center;
+                    margin-left: 20px;
+                    height: auto;
+                    width: 100px;
+                    filter: blur(2px) grayscale(50%);
+                }
+                .team-text {
+                    display: none;
+                }
+                .teamAvatar.active {
+                    height: auto;
+                    width: auto;
+                    filter: blur(0) grayscale(0);
+                    .avatarPhoto {
+                        height: 160px;
+                        width: 160px;
+                        border: 25px solid #fff;
+                        border-radius: 50%;
+                        box-shadow: 0 0 5px 1px $textColor;
+                    }
+                    .team-text {
+                        position: absolute;
+                        display: block;
+                        //width: 80%;
+                        left: 0;
+                        //transform: translateY(50%);
+                    }
+                    .team-text::after {
+                        content: ' ';
+                        clear: both;
+                    }
+                }
+            }
+         }
+     }
+     section.contact {
+         .wrapper {
+             .sub-form {
+                 flex-direction: row;
+                 .field-wrap {
+                     width: 45%;
+                 }
+                 .field-wrap.area {
+                     width: 100%;
+                 }
+                 .contact-button {
+                     margin: 0; 
+                     margin-left: auto;
+                     width: 35%;
+                 }
+             }
+         }
+     }
+     footer.footer {
+         .wrapper {
+             .logo-menu {
+                 ul {
+                     flex-direction: row;
+                 }
+             }
+             .link-social {
+                 ul, .social {
+                     margin: 0;
                  }
              }
          }
      }
  }
- @media screen and (min-width: 992px){
-    body {
-        background: green;
-    }
-     html {
-         font-size: 15px;
-     }
-     section.hero {
-         .wrapper {
-             width: 80%;
-            .elements {
-                margin: 6rem auto;
-                align-items: center;
-                .text {
-                    width: 48.5%;
-                    margin-right: 15%;
-                }
-                .video {
-                    display: block;
-                }
-            }
-         }
-         
-     }
- }
+
  @media screen and (min-width: 1025px){
     body {
-        background: yellow;
+        font-size: 18px;
     }
     section.hero {
         .wrapper {
@@ -593,16 +664,73 @@ html {
                     display: flex;
                 }
             }
+            .elements {
+                flex-direction: row;    
+                margin: 10% auto;
+                padding: 0;
+                justify-content: space-between;
+                .text, .video {
+                    margin: 0;
+                    width: 45%;
+                }
+                .video img {
+                    width: 100%;
+                }
+            }
+        }
+    }
+    section.easy {
+        .wrapper {
+            .tool {
+                flex-wrap: wrap;
+                flex-direction: row;
+                .toolItem {
+                    width: 30%;
+                }
+            }
+            .tool-button {
+                width: 15%;
+            }
+        }
+    }
+    section.count {
+        .countBlock {
+            min-width: auto;
+        }
+    }
+    section.service {
+        .wrapper {
+            .dropMenu {
+                width: 800px;
+            }
+        }
+    }
+    section.testimonails {
+        .wrapper {
+            .textTitle, .feedBack {
+                width: 45%;
+            }
+            .textTitle {
+                .testimonails-button {
+                    display: inline;
+                    width: 35%;
+                }
+            }
+        }
+    }
+    section.team {
+        .wrapper {
+            width: 60%;
+            .teamPeople{
+                max-width: 560px;
+                padding-bottom: 150px;
+            }
+        }
+    }
+    section.contact {
+        .wrapper {
+            width: 60%; 
         }
     }
  }
- @media screen and (min-width: 1919px){
-     html {
-         font-size: 18px;
-     }
-     section.hero {
-        .wrapper {
-            width: 60%;
-        }
-     }
- }
+ 

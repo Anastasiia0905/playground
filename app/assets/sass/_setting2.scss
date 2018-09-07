@@ -42,14 +42,12 @@ p {
     text-decoration: none;
 }
 %wrapper {
-    //max-width: $maxW;
     width: 80%;
     position: relative;
     margin: 0 auto;
 }
 %button {
     height: 55px;
-    width: 35%;
     font-family: $Roboto;
     text-transform: uppercase;
     border-radius: 5px;

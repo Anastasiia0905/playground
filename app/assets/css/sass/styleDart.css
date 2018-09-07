@@ -34,9 +34,8 @@ section.hero .wrapper, section.easy .wrapper, section.service .wrapper, section.
   position: relative;
   margin: 0 auto; }
 
-section.hero .wrapper .elements .text .elements-button, section.easy .wrapper .tool-button, section.testimonails .wrapper .textTitile .testimonails-button, section.contact .wrapper .sub-form button {
+section.hero .wrapper .elements .text .elements-button, section.easy .wrapper .tool-button, section.testimonails .wrapper .textTitle .testimonails-button, section.contact .wrapper .contact-button {
   height: 55px;
-  width: 35%;
   font-family: "Roboto", sans-serif;
   text-transform: uppercase;
   border-radius: 5px;
@@ -161,7 +160,6 @@ section.hero {
           background: #fff;
           color: #061e37; }
       section.hero .wrapper .elements .video {
-        width: 48.5%;
         height: 100%;
         display: none; }
 
@@ -171,7 +169,6 @@ section.easy {
     margin-bottom: 50px;
     color: #d1d9dd; }
     section.easy .wrapper .title {
-      max-width: 580px;
       margin: 100px auto;
       text-align: center; }
       section.easy .wrapper .title h2 {
@@ -207,6 +204,7 @@ section.easy {
           font-size: 1.3rem;
           color: #061e37; }
     section.easy .wrapper .tool-button {
+      width: 55%;
       background-color: #1de9b6;
       color: #fff;
       display: block;
@@ -220,6 +218,7 @@ section.count {
     -webkit-box-flex: 1;
         -ms-flex: 1;
             flex: 1;
+    min-width: 50%;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
@@ -283,17 +282,18 @@ section.testimonails {
   position: relative;
   background: url("../../Dart/img/testimonailsBG.png") center center no-repeat;
   background-size: cover;
-  margin: 100px auto; }
+  margin: 100px auto 50px; }
   section.testimonails .wrapper {
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
     padding: 30px 0; }
-    section.testimonails .wrapper .textTitile {
+    section.testimonails .wrapper .textTitle {
       position: relative;
-      color: #fff; }
-      section.testimonails .wrapper .textTitile h2 {
+      margin: 0 auto;
+      color: #fff;
+      -ms-flex-item-align: center;
+          align-self: center; }
+      section.testimonails .wrapper .textTitle h2 {
         font-size: 3rem; }
-      section.testimonails .wrapper .textTitile .testimonails-button {
+      section.testimonails .wrapper .textTitle .testimonails-button {
         color: #fff;
         width: 160px;
         background-color: #061e37;
@@ -345,44 +345,19 @@ section.testimonails {
             font-style: italic; }
 
 section.team .wrapper {
-  text-align: center; }
-  section.team .wrapper * {
-    margin: 0; }
+  text-align: center;
+  margin: 0 auto; }
   section.team .wrapper h2 {
     font-size: 3rem;
     margin-bottom: 20px;
     color: #061e37; }
-  section.team .wrapper h5 {
-    font-size: 1.2rem;
-    margin-bottom: 20px; }
-  section.team .wrapper p {
-    display: inline-block;
-    color: #d1d9dd; }
-  section.team .wrapper p:first-of-type {
-    width: 560px; }
-  section.team .wrapper p:last-of-type {
-    width: 650px; }
   section.team .wrapper .teamPeople {
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    margin: 80px 0 30px 0; }
+    margin: 0 auto; }
     section.team .wrapper .teamPeople .teamAvatar {
-      margin-left: 25px;
-      height: 100px;
-      -webkit-filter: blur(2px) grayscale(50%);
-              filter: blur(2px) grayscale(50%); }
-    section.team .wrapper .teamPeople .teamAvatar.active {
-      height: 160px;
-      border: 25px solid #fff;
-      border-radius: 50%;
-      -webkit-box-shadow: 0 0 5px 1px #d1d9dd;
-              box-shadow: 0 0 5px 1px #d1d9dd;
-      -webkit-filter: blur(0) grayscale(0);
-              filter: blur(0) grayscale(0); }
+      margin: 2em 0; }
+      section.team .wrapper .teamPeople .teamAvatar .avatarPhoto {
+        width: 90%;
+        max-width: 90vh; }
   section.team .wrapper .socialNail0 {
     background-position: 0px 0; }
   section.team .wrapper .socialNail1 {
@@ -397,19 +372,21 @@ section.team .wrapper {
 section.contact {
   background: #fafafa; }
   section.contact .wrapper {
-    width: 50%;
+    padding: 10% 0;
     text-align: center;
-    padding: 45px 0 90px 0;
     color: #061e37; }
     section.contact .wrapper h2 {
       font-size: 3rem; }
     section.contact .wrapper .sub-form {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column;
       -webkit-box-pack: justify;
           -ms-flex-pack: justify;
-              justify-content: space-between;
-      margin: 50px; }
+              justify-content: space-between; }
       section.contact .wrapper .sub-form .field-wrap {
-        width: 45%; }
+        width: 100%; }
         section.contact .wrapper .sub-form .field-wrap label {
           position: absolute;
           padding: 20px;
@@ -421,8 +398,6 @@ section.contact {
           border: 1px solid #000;
           border-radius: 5px;
           background-color: transparent; }
-      section.contact .wrapper .sub-form .field-wrap.area {
-        width: 100%; }
       section.contact .wrapper .sub-form .field-radio {
         position: relative;
         -webkit-box-align: center;
@@ -448,16 +423,18 @@ section.contact {
       section.contact .wrapper .sub-form .field-radio input:checked ~ .check {
         background: url("../../Dart/img/checked.png") center center no-repeat;
         background-size: 25px; }
-      section.contact .wrapper .sub-form button {
-        width: 130px;
-        background-color: #1de9b6;
-        color: #fff; }
+    section.contact .wrapper .contact-button {
+      display: block;
+      margin: 10% auto;
+      width: 55%;
+      background-color: #1de9b6;
+      color: #fff; }
 
 footer.footer {
   background-color: #061e37;
   color: #fff; }
   footer.footer .wrapper {
-    padding: 100px 0; }
+    padding: 10% 0; }
     footer.footer .wrapper .logo-menu {
       width: 100%;
       -webkit-box-pack: justify;
@@ -475,21 +452,31 @@ footer.footer {
           margin-left: 10px;
           text-transform: uppercase;
           font-weight: 400;
-          line-height: 1rem; }
+          line-height: 2rem; }
           footer.footer .wrapper .logo-menu .logo p span {
             font-weight: 800; }
-      footer.footer .wrapper .logo-menu ul li {
-        margin-left: 50px; }
-        footer.footer .wrapper .logo-menu ul li a {
-          color: #fff; }
+      footer.footer .wrapper .logo-menu ul {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column; }
+        footer.footer .wrapper .logo-menu ul li {
+          margin-left: 50px;
+          margin-bottom: 5px; }
+          footer.footer .wrapper .logo-menu ul li a {
+            color: #fff; }
     footer.footer .wrapper .link-social {
       width: 100%;
       -webkit-box-pack: justify;
           -ms-flex-pack: justify;
               justify-content: space-between; }
-      footer.footer .wrapper .link-social ul li {
-        margin-left: 10px;
-        color: #858a92; }
+      footer.footer .wrapper .link-social ul {
+        margin: 10% auto; }
+        footer.footer .wrapper .link-social ul li {
+          margin-right: 10px;
+          color: #858a92; }
+      footer.footer .wrapper .link-social .social {
+        margin: 10% auto; }
       footer.footer .wrapper .link-social .socialNail0 {
         background-position: 0px 0;
         margin: 0; }
@@ -506,50 +493,114 @@ footer.footer {
         background-position: -176px 0;
         margin: 0; }
 
-@media screen and (min-width: 481px) and (max-width: 766px) {
-  body {
-    background: violet; } }
-
 @media screen and (min-width: 767px) {
-  body {
-    background-color: black; }
-  section.hero .wrapper {
-    width: 66%; }
-    section.hero .wrapper .elements {
-      margin: 2.5rem auto; }
-      section.hero .wrapper .elements .text .buttonGroup {
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        padding: 0;
-        -webkit-box-pack: justify;
-            -ms-flex-pack: justify;
-                justify-content: space-between; }
-        section.hero .wrapper .elements .text .buttonGroup .elements-button {
-          width: 35%;
-          margin: 0; } }
-
-@media screen and (min-width: 992px) {
-  body {
-    background: green; }
-  html {
-    font-size: 15px; }
   section.hero .wrapper {
     width: 80%; }
     section.hero .wrapper .elements {
-      margin: 6rem auto;
-      -webkit-box-align: center;
-          -ms-flex-align: center;
-              align-items: center; }
+      margin: 2rem auto;
+      padding: 5%;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column; }
       section.hero .wrapper .elements .text {
-        width: 48.5%;
-        margin-right: 15%; }
+        margin: 10%; }
+        section.hero .wrapper .elements .text .buttonGroup {
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex;
+          padding: 0;
+          -webkit-box-pack: justify;
+              -ms-flex-pack: justify;
+                  justify-content: space-between; }
+          section.hero .wrapper .elements .text .buttonGroup .elements-button {
+            width: 35%;
+            margin: 0; }
       section.hero .wrapper .elements .video {
-        display: block; } }
+        display: block;
+        margin: 0;
+        padding: 0;
+        width: 100%; }
+  section.easy .wrapper {
+    width: 65%; }
+  section.service .wrapper .dropMenu .dropMenuBlock .groupDown {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between; }
+    section.service .wrapper .dropMenu .dropMenuBlock .groupDown .service-img {
+      max-width: 45%;
+      height: 100%;
+      margin: 0;
+      -ms-flex-item-align: center;
+          align-self: center; }
+    section.service .wrapper .dropMenu .dropMenuBlock .groupDown .txtDown {
+      max-width: 45%; }
+  section.testimonails .wrapper .feedBack .comment .customAvatar {
+    -ms-flex-item-align: center;
+        align-self: center;
+    display: block;
+    width: 70px;
+    height: 70px;
+    margin: 0 auto; }
+  section.team .wrapper .teamPeople {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    position: relative;
+    height: 40vh; }
+    section.team .wrapper .teamPeople .teamAvatar {
+      -ms-flex-item-align: center;
+          align-self: center;
+      margin-left: 20px;
+      height: auto;
+      width: 100px;
+      -webkit-filter: blur(2px) grayscale(50%);
+              filter: blur(2px) grayscale(50%); }
+    section.team .wrapper .teamPeople .team-text {
+      display: none; }
+    section.team .wrapper .teamPeople .teamAvatar.active {
+      height: auto;
+      width: auto;
+      -webkit-filter: blur(0) grayscale(0);
+              filter: blur(0) grayscale(0); }
+      section.team .wrapper .teamPeople .teamAvatar.active .avatarPhoto {
+        height: 160px;
+        width: 160px;
+        border: 25px solid #fff;
+        border-radius: 50%;
+        -webkit-box-shadow: 0 0 5px 1px #d1d9dd;
+                box-shadow: 0 0 5px 1px #d1d9dd; }
+      section.team .wrapper .teamPeople .teamAvatar.active .team-text {
+        position: absolute;
+        display: block;
+        left: 0; }
+      section.team .wrapper .teamPeople .teamAvatar.active .team-text::after {
+        content: ' ';
+        clear: both; }
+  section.contact .wrapper .sub-form {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row; }
+    section.contact .wrapper .sub-form .field-wrap {
+      width: 45%; }
+    section.contact .wrapper .sub-form .field-wrap.area {
+      width: 100%; }
+    section.contact .wrapper .sub-form .contact-button {
+      margin: 0;
+      margin-left: auto;
+      width: 35%; }
+  footer.footer .wrapper .logo-menu ul {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row; }
+  footer.footer .wrapper .link-social ul, footer.footer .wrapper .link-social .social {
+    margin: 0; } }
 
 @media screen and (min-width: 1025px) {
   body {
-    background: yellow; }
+    font-size: 18px; }
   section.hero .wrapper {
     margin: 50px auto; }
     section.hero .wrapper .header .nav-toggle {
@@ -557,10 +608,46 @@ footer.footer {
     section.hero .wrapper .header .main-menu, section.hero .wrapper .header .nav-button {
       display: -webkit-box;
       display: -ms-flexbox;
-      display: flex; } }
-
-@media screen and (min-width: 1919px) {
-  html {
-    font-size: 18px; }
-  section.hero .wrapper {
+      display: flex; }
+    section.hero .wrapper .elements {
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: row;
+              flex-direction: row;
+      margin: 10% auto;
+      padding: 0;
+      -webkit-box-pack: justify;
+          -ms-flex-pack: justify;
+              justify-content: space-between; }
+      section.hero .wrapper .elements .text, section.hero .wrapper .elements .video {
+        margin: 0;
+        width: 45%; }
+      section.hero .wrapper .elements .video img {
+        width: 100%; }
+  section.easy .wrapper .tool {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row; }
+    section.easy .wrapper .tool .toolItem {
+      width: 30%; }
+  section.easy .wrapper .tool-button {
+    width: 15%; }
+  section.count .countBlock {
+    min-width: auto; }
+  section.service .wrapper .dropMenu {
+    width: 800px; }
+  section.testimonails .wrapper .textTitle, section.testimonails .wrapper .feedBack {
+    width: 45%; }
+  section.testimonails .wrapper .textTitle .testimonails-button {
+    display: inline;
+    width: 35%; }
+  section.team .wrapper {
+    width: 60%; }
+    section.team .wrapper .teamPeople {
+      max-width: 560px;
+      padding-bottom: 150px; }
+  section.contact .wrapper {
     width: 60%; } }
